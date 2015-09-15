@@ -1,0 +1,38 @@
+---
+title: The Mess
+---
+
+# The MESS. Why it happens to my code again and again?
+
+
+Ruby on Rails considered a universal framework for web applications creation. So, whenever you develop something for web with Ruby, Rails is your choice by default.
+
+At the beginning of development everything is super-quick and straightforward.
+Then you add some gems, and they seem to fit perfectly, and they boost you even more.
+
+<%= image_tag 'mess/cycle.png', :width => '450' %>
+
+But after a while, when you added more functionality and gems, you start to notice, that some of the stuff does not fit very well. So you start using nails and glue to stick everything together.
+
+The whole thing still seem to be movable. Although if you keep adding stuff, at some moment you find yourself in a situation when every step forward becomes too painful.
+
+You fix it in one place - it breaks in two others. You introduce new  functionality - it conflicts with existing architecture. Not to mention about Rails version upgrade.
+
+This happens because of increased complexity due to application size growth.
+
+Lets introduce some mathematicallity:
+
+
+<%= image_tag 'mess/mess-ratio.png', :width => '450' %>
+
+So, the bigger our app gets, the more mess we get. Unless we're able to manage complexity.
+
+This ability can come from two sources:
+
+- Complexity can be managed by developer, if he is familiar with corresponding practices.
+- Or framework itself offers some solutions &amp; instruments to for the same purpose.
+
+Rails is known to be optimized for developer's convenience. Things can become hairy pretty quick. Remember conditional validations for example.
+
+Developers, who tend to rely on default Rails way, become trapped: "Rails is good by default(he thinks), so there's no need to learn special complexity management techniques"
+

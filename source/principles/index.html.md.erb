@@ -1,6 +1,4 @@
-# What is wrong with being Rails developer
-
-## Principles misunderstanding
+# How Rails developers misunderstand some of software development principles
 
 Let's assume for now, what maybe we don't completely understand something. And this little something makes us use Rails in a wrong way.
 
@@ -17,7 +15,7 @@ People use principles and acronyms to compress meanings. By doing so, there's a 
 
 So let's try to decompress them, and see what might be wrong with our understanding.
 
-### DRY - Do not repeat yourself
+## DRY - Do not repeat yourself
 This is a simple one, isn't it? Just don't duplicate the code. Whenever you see duplication, you should immediately make a function or a class and reuse it as much as possible. Sounds smart, isn't it?
 
 The problem here that it tells us nothing about when it is a good time to apply this principle. And if nothing told, we assume that it should be applied all the time.
@@ -43,7 +41,7 @@ This thing is also called *accidental complexity*. By contract with *essential c
 
 For sure, you shouldn't be wanting that additional pile of complexity in your app. Let's just keep the stuff simple, right?
 
-### KISS - Keep it simple, stupid
+## KISS - Keep it simple, stupid
 
 > The KISS principle states that most systems work best if they are kept simple rather than made complicated; therefore simplicity should be a key goal in design and unnecessary complexity should be avoided
 
@@ -96,7 +94,7 @@ So let's admit it - Rails is not simple, it is convenient.
 
 One of its conveniences is that we have so little things to configure.
 
-### Conventions over configurations
+## Conventions over configurations
 
 What could be wrong with conventions?
 We should praise Rails for giving us naming convention about database stuff, that makes sense.
@@ -107,14 +105,14 @@ The bad thing about conventions is that they are implicit. So if there's too man
 
 Even default conventions might become too tight for you when your app grows. So just remember that the price of conventions is flexibility.
 
-### Fat model, skinny controller
+## Fat model, skinny controller
 
 This is a lovely one. I do not remember the author. But in the days we all were suffering from fat controllers, it sounded like a great blessing for us all. Finally, we're figured it out! We shouldn't put all the business logic into controllers! Lets put all that crap into models, right?
 
 But why do you think life with fat models is going to be easier?
 It turns out that just moving stuff from one place to another is not enough.
 
-### Rails is not your application
+## Rails is not your application
 
 The problem with this is not that it is misunderstood. It is not understood at all.
 
@@ -137,11 +135,11 @@ Ideally you business logic code should have as little points of contact with web
 
 Moreover, this is not necessarily one-to-one relation. Your app might want to interact with more than one framework, or there could be more than one app, interacting with the same instance of the framework.
 
-### YAGNI - You aren't gonna need it
+## YAGNI - You aren't gonna need it
 
 
 
-### Prefer composition over inheritance
+## Prefer composition over inheritance
 
 https://twitter.com/\_solnic\_/status/623224611212251136
 

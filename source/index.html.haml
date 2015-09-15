@@ -1,17 +1,28 @@
 ---
-title: Welcome to Middleman
+title: Rails Hurts
 ---
+/ 💔
 .center-block
-  %img.img-responsive.center-block{:src => "images/site-logo.png", :width => "200px"}/
+  %img.center-block{:src => "images/site-logo.png", :width => "200px"}/
   %h1{:style => "text-align: center;"}
     RAILS HURTS
     %br/
     %small But we are not doomed to suffer forever
 %br/
 .lead.text-center
-  The goal of the project is to help developers to suffer less while they are working with Ruby on Rails
+  %p
+    The goal of the project is to help developers to suffer less while they are working with Ruby on Rails
+
+.text-center
+  %small
+    Not for: rails ninjas, gurus and other kind of characters, who are completely comfortable with Rails
+
+
+%br/
+%br/
+
 %h4
-  %a{:href => "/the_mess"} The MESS. Why it happens to my code again and again?
+  %a{:href => "/mess"} The MESS. Why it happens to my code again and again?
 %h4
   %a{:href => "/principles"} How Rails developers misunderstand some of software development principles:
 .row
@@ -55,19 +66,22 @@ title: Welcome to Middleman
 
 / Begin MailChimp Signup Form
 %h3 Get notified about new posts:
-#mc_embed_signup
-  %form#mc-embedded-subscribe-form.validate{:action => "//nemytchenko.us8.list-manage.com/subscribe/post?u=eac87c13e320dbac697422aa7&id=a3d703793a", :method => "post", :name => "mc-embedded-subscribe-form", :novalidate => "", :target => "_blank"}
-    #mc_embed_signup_scroll
-      / real people should not fill this in and expect good things - do not remove this or risk form bot signups
-      %div{:style => "position: absolute; left: -5000px;"}
-        %input{:name => "b_eac87c13e320dbac697422aa7_a3d703793a", :tabindex => "-1", :type => "text", :value => ""}/
-      #mce-responses.clear
-        #mce-error-response.response{:style => "display:none"}
-        #mce-success-response.response{:style => "display:none"}
-      %label{:for => "mce-EMAIL"} Email Address:
-      %input#mce-EMAIL.required.email{:name => "EMAIL", :type => "email", :value => ""}/
-      %input#mc-embedded-subscribe.btn.btn-default.btn-xs{:name => "subscribe", :type => "submit", :value => "Subscribe"}/
+#get-free-chapter.row
+  .col-md-2
+  .col-md-6#mc_embed_signup
+    %form#mc-embedded-subscribe-form.validate{:action => "//nemytchenko.us8.list-manage.com/subscribe/post?u=eac87c13e320dbac697422aa7&id=a3d703793a", :method => "post", :name => "mc-embedded-subscribe-form", :novalidate => "", :target => "_blank"}
+      #mc_embed_signup_scroll
+        / real people should not fill this in and expect good things - do not remove this or risk form bot signups
+        %div{:style => "position: absolute; left: -5000px;"}
+          %input{:name => "b_eac87c13e320dbac697422aa7_a3d703793a", :tabindex => "-1", :type => "text", :value => ""}/
+        #mce-responses.clear
+          #mce-error-response.response{:style => "display:none"}
+          #mce-success-response.response{:style => "display:none"}
+        %input#mce-EMAIL.required.email{:name => "EMAIL", :type => "email", :value => "", :placeholder => "Email address"}/
+        %input#mc-embedded-subscribe.btn.btn-default.btn-xs{:name => "subscribe", :type => "submit", :value => "Subscribe"}/
+  .col-md-4
+    Follow
+    %a{:href => "http://twitter.com/RailsHurts"}@RailsHurts
 
 %br/
-
-%a{:href => "http://twitter.com/RailsHurts"} Follow on twitter
+%br/

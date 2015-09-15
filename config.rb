@@ -53,6 +53,10 @@ set :js_dir, 'javascripts'
 
 set :images_dir, 'images'
 
+# activate :disqus do |d|
+#   d.shortname = 'your-shortname' # Replace with your Disqus shortname.
+# end
+
 # Build-specific configuration
 configure :build do
   # For example, change the Compass output style for deployment
