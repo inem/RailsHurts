@@ -64,11 +64,11 @@ title: Rails Hurts
 
 %br/
 
-/ Begin MailChimp Signup Form
-%h3 Get notified about new posts:
-#get-free-chapter.row
-  .col-md-2
-  .col-md-6#mc_embed_signup
+
+.text-center
+  / Begin MailChimp Signup Form
+  %h3 Get notified about new posts:
+  #get-free-chapter
     %form#mc-embedded-subscribe-form.validate{:action => "//nemytchenko.us8.list-manage.com/subscribe/post?u=eac87c13e320dbac697422aa7&id=a3d703793a", :method => "post", :name => "mc-embedded-subscribe-form", :novalidate => "", :target => "_blank"}
       #mc_embed_signup_scroll
         / real people should not fill this in and expect good things - do not remove this or risk form bot signups
@@ -79,9 +79,11 @@ title: Rails Hurts
           #mce-success-response.response{:style => "display:none"}
         %input#mce-EMAIL.required.email{:name => "EMAIL", :type => "email", :value => "", :placeholder => "Email address"}/
         %input#mc-embedded-subscribe.btn.btn-default.btn-xs{:name => "subscribe", :type => "submit", :value => "Subscribe"}/
-  .col-md-4
-    Follow
-    %a{:href => "http://twitter.com/RailsHurts"}@RailsHurts
 
-%br/
+  %br/
+
+  %a{:href => "http://twitter.com/RailsHurts"}
+    %img.center-block{:src => "images/ruby-patched.png", :width => "60px"}/
+    Follow @RailsHurts
+
 %br/

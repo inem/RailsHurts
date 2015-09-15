@@ -14,4 +14,13 @@
     = javascript_include_tag  "all", "bootstrap.min"
   %body{:class => page_classes}
     .container{:style => "width: 600px"}
+      .text-center
+        %a{:href => "/"}
+          %img.center-block{:src => "/images/site-logo.png", :width => "60px"}/
+
       = yield
+
+      .text-center
+        %a{:href => "http://twitter.com/RailsHurts"}
+          %img.center-block{:src => "/images/ruby-patched.png", :width => "60px"}/
+          Follow @RailsHurts
