@@ -3,7 +3,7 @@ title: Rails Hurts
 ---
 / 💔
 .center-block
-  %img.center-block{:src => "images/site-logo.png", :width => "200px"}/
+  %img.center-block{:src => "images/site-logo.png", :width => "180px"}/
   %h1{:style => "text-align: center;"}
     RAILS HURTS
     %br/
@@ -11,11 +11,11 @@ title: Rails Hurts
 %br/
 .lead.text-center
   %p
-    The goal of the project is to help developers to suffer less while they are working with Ruby on Rails
+    The goal of this project is to help developers to suffer less while they are working with Ruby on Rails
 
 .text-center
   %small
-    Not for: rails ninjas, gurus and other kind of characters, who are completely comfortable with Rails
+    <strong>not for</strong>: rails ninjas, gurus and other kind of characters, who are completely comfortable with Rails
 
 
 %br/
@@ -24,30 +24,28 @@ title: Rails Hurts
 %h4
   %a{:href => "/mess"} The MESS. Why it happens to my code again and again?
 %h4
-  %a{:href => "/principles"} How Rails developers misunderstand some of software development principles:
+  %a{:href => "/principles"} How Rails developers misunderstand software development principles:
 .row
-  .col-md-1
-  .col-md-5
-    %a{:href => "/principles#dry---do-not-repeat-yourself"} DRY - "Do not repeat yourself"
+
   .col-md-6
-    %a{:href => "/principles#kiss---keep-it-simple-stupid"} KISS - "Keep it simple, stupid"
-.row
-  .col-md-1
-  .col-md-5
-    %a{:href => "/principles#rails-is-not-your-application"} Rails is not your application
+    %ul
+      %li
+        %a{:href => "/principles#dry---do-not-repeat-yourself"} DRY - "Do not repeat yourself"
+      %li
+        %a{:href => "/principles#rails-is-not-your-application"} Rails is not your application
+      %li
+        %a{:href => "/principles#conventions-over-configurations"} Convention over configuration
+      %li
+        %a{:href => "/principles#prefer-composition-over-inheritance"} Composition over inheritance
   .col-md-6
-    %a{:href => "/principles#yagni---you-arent-gonna-need-it"} YAGNI - "You aren't gonna need it"
-.row
-  .col-md-1
-  .col-md-5
-    %a{:href => "/principles#conventions-over-configurations"} Convention over configuration
-  .col-md-6
-    %a{:href => "/principles#fat-model-skinny-controller"} Fat model, skinny controller
-.row
-  .col-md-1
-  .col-md-5
-    %a{:href => "/principles#prefer-composition-over-inheritance"} Composition over inheritance
-  .col-md-6
+    %ul
+      %li
+        %a{:href => "/principles#kiss---keep-it-simple-stupid"} KISS - "Keep it simple, stupid"
+      %li
+        %a{:href => "/principles#yagni---you-arent-gonna-need-it"} YAGNI - "You aren't gonna need it"
+      %li
+        %a{:href => "/principles#fat-model-skinny-controller"} Fat model, skinny controller
+
 %h4
   %a{:href => "/current_state"} Current state of Ruby on Rails community
 
