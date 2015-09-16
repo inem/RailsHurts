@@ -20,7 +20,37 @@
 
       = yield
 
+      %br/
       .text-center
+        / Begin MailChimp Signup Form
+        %h3 Get notified about new posts:
+        #get-free-chapter
+          %form#mc-embedded-subscribe-form.validate{:action => "//nemytchenko.us8.list-manage.com/subscribe/post?u=eac87c13e320dbac697422aa7&id=a3d703793a", :method => "post", :name => "mc-embedded-subscribe-form", :novalidate => "", :target => "_blank"}
+            #mc_embed_signup_scroll
+              / real people should not fill this in and expect good things - do not remove this or risk form bot signups
+              %div{:style => "position: absolute; left: -5000px;"}
+                %input{:name => "b_eac87c13e320dbac697422aa7_a3d703793a", :tabindex => "-1", :type => "text", :value => ""}/
+              #mce-responses.clear
+                #mce-error-response.response{:style => "display:none"}
+                #mce-success-response.response{:style => "display:none"}
+              %input#mce-EMAIL.required.email{:name => "EMAIL", :type => "email", :value => "", :placeholder => "Email address"}/
+              %input#mc-embedded-subscribe.btn.btn-default.btn-xs{:name => "subscribe", :type => "submit", :value => "Subscribe"}/
+        %br/
         %a{:href => "http://twitter.com/RailsHurts"}
           %img.center-block{:src => "/images/ruby-patched.png", :width => "60px"}/
           Follow @RailsHurts
+      %br/
+      %br/
+
+    :plain
+      <!-- Yandex.Metrika counter --><script type="text/javascript"> (function (d, w, c) { (w[c] = w[c] || []).push(function() { try { w.yaCounter32527030 = new Ya.Metrika({ id:32527030, clickmap:true, trackLinks:true, accurateTrackBounce:true, webvisor:true, trackHash:true }); } catch(e) { } }); var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () { n.parentNode.insertBefore(s, n); }; s.type = "text/javascript"; s.async = true; s.src = "https://mc.yandex.ru/metrika/watch.js"; if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); } })(document, window, "yandex_metrika_callbacks");</script><noscript><div><img src="https://mc.yandex.ru/watch/32527030" style="position:absolute; left:-9999px;" alt="" /></div></noscript><!-- /Yandex.Metrika counter -->
+      <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-67699650-1', 'auto');
+        ga('send', 'pageview');
+
+      </script>
