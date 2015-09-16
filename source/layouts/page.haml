@@ -8,7 +8,7 @@
     / Use title if it's in the page YAML frontmatter
     %title= current_page.data.title || "Rails hurts"
 
-    %link{ :rel=> "shortcut icon", :type => "image/png", :href => "/images/site-logo-small.png"}
+    %link{ :rel=> "shortcut icon", :type => "image/png", :href => "/images/icon.png"}
     = stylesheet_link_tag "bootstrap.min"
     = javascript_include_tag "https://code.jquery.com/jquery-2.1.4.min.js"
     = javascript_include_tag  "all", "bootstrap.min"
@@ -19,6 +19,9 @@
         %br/
         %a{:href => "/"}
           %img.center-block{:src => "/images/site-logo.png", :width => "60px"}/
+          %h5{:style => "text-align: center;"}
+            RAILS HURTS
+
         %br/
       = yield
 
@@ -35,7 +38,6 @@
                 (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
             })();
         </script>
-        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
 
       %br/
       .text-center
@@ -60,6 +62,8 @@
       %br/
 
     :plain
+      <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
       <!-- Yandex.Metrika counter --><script type="text/javascript"> (function (d, w, c) { (w[c] = w[c] || []).push(function() { try { w.yaCounter32527030 = new Ya.Metrika({ id:32527030, clickmap:true, trackLinks:true, accurateTrackBounce:true, webvisor:true, trackHash:true }); } catch(e) { } }); var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () { n.parentNode.insertBefore(s, n); }; s.type = "text/javascript"; s.async = true; s.src = "https://mc.yandex.ru/metrika/watch.js"; if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); } })(document, window, "yandex_metrika_callbacks");</script><noscript><div><img src="https://mc.yandex.ru/watch/32527030" style="position:absolute; left:-9999px;" alt="" /></div></noscript><!-- /Yandex.Metrika counter -->
       <script>
         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
