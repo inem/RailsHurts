@@ -42,8 +42,8 @@ end
 
 # Methods defined in the helpers block are available in templates
 helpers do
-  def img(path)
-    image_tag path, :width => '450', :class => "center-block", :style => "padding: 20px 0"
+  def img(path, width = 450)
+    image_tag path, :width => width, :class => "center-block", :style => "padding: 20px 0"
   end
 end
 

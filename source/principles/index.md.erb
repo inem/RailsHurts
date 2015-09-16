@@ -20,6 +20,8 @@ People use principles and acronyms to compress meanings. By doing so, there's a 
 
 So let's try to decompress them, and see what might be wrong with our understanding.
 
+<%= img 'icon.png', 16 %>
+
 ## DRY - Do not repeat yourself
 This is a simple one, isn't it? Just don't duplicate the code. Whenever you see duplication, you should immediately make a function or a class and reuse it as much as possible. Sounds smart, isn't it?
 
@@ -45,6 +47,8 @@ And they are wrong if you introduced them when your system understanding was not
 This thing is also called *accidental complexity*. By contract with *essential complexity*, it has nothing in common with the complexity of your business domain. It happens because you decide to organize everything in a specific way.
 
 For sure, you shouldn't be wanting that additional pile of complexity in your app. Let's just keep the stuff simple, right?
+
+<%= img 'icon.png', 16 %>
 
 ## KISS - Keep it simple, stupid
 
@@ -99,6 +103,8 @@ So let's admit it - Rails is not simple, it is convenient.
 
 One of its conveniences is that we have so little things to configure.
 
+<%= img 'icon.png', 16 %>
+
 ## Conventions over configurations
 
 What could be wrong with conventions?
@@ -110,6 +116,8 @@ The bad thing about conventions is that they are implicit. So if there's too man
 
 Even default conventions might become too tight for you when your app grows. So just remember that the price of conventions is flexibility.
 
+<%= img 'icon.png', 16 %>
+
 ## Fat model, skinny controller
 
 This is a lovely one. I do not remember the author. But in the days we all were suffering from fat controllers, it sounded like a great blessing for us all. Finally, we're figured it out! We shouldn't put all the business logic into controllers! Let's put all that crap into models, right?
@@ -118,6 +126,8 @@ But why do you think life with fat models is going to be easier?
 It turns out that just moving stuff from one place to another is not enough.
 
 <%= img 'principles/fat-classes.jpg' %>
+
+<%= img 'icon.png', 16 %>
 
 ## Rails is not your application
 
@@ -144,6 +154,8 @@ Ideally you business logic code should have as little points of contact with web
 
 Moreover, this is not necessarily one-to-one relation. Your app might want to interact with more than one framework, or there could be more than one app, interacting with the same instance of the framework.
 
+<%= img 'icon.png', 16 %>
+
 ## YAGNI - You aren't gonna need it
 
 It looks pretty clear:
@@ -161,6 +173,7 @@ And then we become slaves of the storage or even slaves of DB schema.
 And what if you don't need web framework at all?
 Have you ever asked this question to yourself? :)
 
+<%= img 'icon.png', 16 %>
 
 ## Prefer composition over inheritance
 
@@ -175,7 +188,7 @@ Still not convinced? Try this in your console:
 <script src="https://gist.github.com/solnic/ee0a023a48a56bd224a4.js"></script>
 <!--
 
-<br/><br/><br/>
+<%= img 'icon.png', 16 %><br/>
 
 There is only one universal rule:
 
