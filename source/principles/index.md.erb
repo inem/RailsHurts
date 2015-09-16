@@ -33,7 +33,7 @@ But you already removed all possible duplications and made things related to eac
 
 But here's the trick: number of relations increases the complexity of a system.
 
-And this is what Sandi Metz means when she says that duplication is much cheaper than wrong abstraction.
+And this is what Sandi Metz means when she says that duplication is much cheaper than the wrong abstraction.
 
 <blockquote class="twitter-tweet" data-cards="hidden" lang="en"><p lang="en" dir="ltr">“Duplication is far cheaper than the wrong abstraction.” <a href="https://twitter.com/sandimetz">@sandimetz</a> <a href="https://twitter.com/rbonales">@rbonales</a> <a href="http://t.co/zAmc9pvNS4">pic.twitter.com/zAmc9pvNS4</a></p>&mdash; bryce irl (@BonzoESC) <a href="https://twitter.com/BonzoESC/status/442003113910603776">March 7, 2014</a></blockquote>
 
@@ -112,7 +112,7 @@ Even default conventions might become too tight for you when your app grows. So 
 
 ## Fat model, skinny controller
 
-This is a lovely one. I do not remember the author. But in the days we all were suffering from fat controllers, it sounded like a great blessing for us all. Finally, we're figured it out! We shouldn't put all the business logic into controllers! Lets put all that crap into models, right?
+This is a lovely one. I do not remember the author. But in the days we all were suffering from fat controllers, it sounded like a great blessing for us all. Finally, we're figured it out! We shouldn't put all the business logic into controllers! Let's put all that crap into models, right?
 
 But why do you think life with fat models is going to be easier?
 It turns out that just moving stuff from one place to another is not enough.
@@ -125,7 +125,7 @@ It just doesn't make sense. Here's my Rails _application_. Here's `app` folder. 
 
 This is where the idea of *DDD* starts floating around. We'll cover it later, but for now let's not overcomplicate.
 
-Why it is always so painful to upgrade to next version of Rails?
+Why is it always so painful to upgrade to next version of Rails?
 Can you imagine your application without Rails? I mean your application has some business logic, right? Why can't you re-use it for some small command-line utility, for example?
 
 It is because such code desperately dependent on Rails. Every single piece of usual Rails application code depends on it and assumes Rails is there to help.
