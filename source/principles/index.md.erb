@@ -1,8 +1,8 @@
 ---
-title: How Rails developers misunderstand some of software development principles
+title: How Rails developers misunderstand software development principles
 layout: page
 ---
-# How Rails developers misunderstand some of software development principles
+# How Rails developers misunderstand software development principles
 
 Let's assume for now, what maybe we don't completely understand something. And this little something makes us use Rails in a wrong way.
 
@@ -34,7 +34,7 @@ But here's the trick: number of relations increases the complexity of a system.
 
 And this is what Sandi Metz means when she says that duplication is much cheaper than wrong abstraction.
 
-<%= image_tag 'principles/sandimetz-tweet.png', :width => '450' %>
+<blockquote class="twitter-tweet" data-cards="hidden" lang="en"><p lang="en" dir="ltr">“Duplication is far cheaper than the wrong abstraction.” <a href="https://twitter.com/sandimetz">@sandimetz</a> <a href="https://twitter.com/rbonales">@rbonales</a> <a href="http://t.co/zAmc9pvNS4">pic.twitter.com/zAmc9pvNS4</a></p>&mdash; bryce irl (@BonzoESC) <a href="https://twitter.com/BonzoESC/status/442003113910603776">March 7, 2014</a></blockquote>
 
 By reducing the number of duplications, you're introducing abstractions. Your code becomes dependent on those abstractions.
 
@@ -145,23 +145,5 @@ Moreover, this is not necessarily one-to-one relation. Your app might want to in
 
 ## Prefer composition over inheritance
 
-https://twitter.com/\_solnic\_/status/623224611212251136
-
-
-
-<script>window.twttr = (function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0],
-    t = window.twttr || {};
-  if (d.getElementById(id)) return t;
-  js = d.createElement(s);
-  js.id = id;
-  js.src = "https://platform.twitter.com/widgets.js";
-  fjs.parentNode.insertBefore(js, fjs);
-
-  t._e = [];
-  t.ready = function(f) {
-    t._e.push(f);
-  };
-
-  return t;
-}(document, "script", "twitter-wjs"));</script>
+<blockquote class="twitter-tweet" lang="en"><p lang="en" dir="ltr">In OOP there’s this thing to prefer composition over inheritance. And in Ruby people constantly forget that modules == multiple inheritance</p>&mdash; Piotr Solnica (@_solnic_) <a href="https://twitter.com/_solnic_/status/623224611212251136">July 20, 2015</a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
