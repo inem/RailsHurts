@@ -60,7 +60,7 @@ But... is it true?
 Have you tried to take a look at the ActiveRecord source code?
 It is insane. It is like a horde of gnomes inside of a beautiful box with two buttons and couple of settings, who do all the kind of things to satisfy your request every time.
 
-<%= image_tag 'principles/activerecord-mess.png', :width => '450' %>
+<%= img 'principles/activerecord-mess.jpg' %>
 
 Here are some of the things, ActiveRecord gnomes had to do for you:
 
@@ -117,34 +117,68 @@ This is a lovely one. I do not remember the author. But in the days we all were 
 But why do you think life with fat models is going to be easier?
 It turns out that just moving stuff from one place to another is not enough.
 
+<%= img 'principles/fat-classes.jpg' %>
+
 ## Rails is not your application
 
 The problem with this is not that it is misunderstood. It is not understood at all.
 
 It just doesn't make sense. Here's my Rails _application_. Here's `app` folder. What's wrong?
 
-This is where the idea of *DDD* starts floating around. We'll cover it later, but for now let's not overcomplicate.
+This is where the idea of *DDD* starts floating around. We'll cover it next time, but for now let's not overcomplicate.
 
 Why is it always so painful to upgrade to next version of Rails?
 Can you imagine your application without Rails? I mean your application has some business logic, right? Why can't you re-use it for some small command-line utility, for example?
 
-It is because such code desperately dependent on Rails. Every single piece of usual Rails application code depends on it and assumes Rails is there to help.
+It is because such code is desperately dependent on Rails. Every single piece of usual Rails application code depends on framework and assumes Rails is there to help.
 
 And if you have business logic code intermixed with Rails framework, guess what happens when business logic changes or Rails needs to be upgraded?
 
-<%= image_tag 'principles/businesslogic-rails.png', :width => '450' %>
+<%= img 'principles/businesslogic-rails.jpg' %>
 
 The PAIN starts to appear from every single change which should be done!
 
 Ideally you business logic code should have as little points of contact with web framework as possible. And it is a very good question how to achieve this.
 
+<%= img 'principles/businesslogic-separated.jpg' %>
+
 Moreover, this is not necessarily one-to-one relation. Your app might want to interact with more than one framework, or there could be more than one app, interacting with the same instance of the framework.
 
 ## YAGNI - You aren't gonna need it
 
+It looks pretty clear:
+
+> "...a programmer should not add functionality until deemed necessary" ([wikipedia](https://en.wikipedia.org/wiki/You_aren%27t_gonna_need_it))
+
+But wait, every ruby developer in the world who is about to build a new web app, taking Rails.
+Rails provides a lot of functionality, you might not need yet.
+
+What if you don't need persistence layer yet? Wouldn't it be better if you could develop stuff, not thinking about how it is going to be stored in DB? And at one point implement persistence layer, and switch memory storage to MySQL of MongoDB or ElasticSearch or whatever.
+
+When we take Rails by default, we make critical decisions about storage too early.
+And then we become slaves of the storage or even slaves of DB schema.
+
+And what if you don't need web framework at all?
+Have you ever asked this question to yourself? :)
 
 
 ## Prefer composition over inheritance
 
+In ruby we have mixins. And once we learned that inheritance sucks, we tend to switch to modules, assuming it is any better.
+
+I'll just post this tweet here:
+
 <blockquote class="twitter-tweet" lang="en"><p lang="en" dir="ltr">In OOP there’s this thing to prefer composition over inheritance. And in Ruby people constantly forget that modules == multiple inheritance</p>&mdash; Piotr Solnica (@_solnic_) <a href="https://twitter.com/_solnic_/status/623224611212251136">July 20, 2015</a></blockquote>
-<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+Still not convinced? Try this in your console:
+
+<script src="https://gist.github.com/solnic/ee0a023a48a56bd224a4.js"></script>
+<!--
+
+<br/><br/><br/>
+
+There is only one universal rule:
+
+> Question everything generally thought to be obvious.
+>
+> -- Dieter Rams -->

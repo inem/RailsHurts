@@ -41,21 +41,17 @@ configure :development do
 end
 
 # Methods defined in the helpers block are available in templates
-# helpers do
-#   def some_helper
-#     "Helping"
-#   end
-# end
+helpers do
+  def img(path)
+    image_tag path, :width => '450', :class => "center-block", :style => "padding: 20px 0"
+  end
+end
 
 set :css_dir, 'stylesheets'
 
 set :js_dir, 'javascripts'
 
 set :images_dir, 'images'
-
-# activate :disqus do |d|
-#   d.shortname = 'your-shortname' # Replace with your Disqus shortname.
-# end
 
 # Build-specific configuration
 configure :build do
