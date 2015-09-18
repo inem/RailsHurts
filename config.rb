@@ -2,6 +2,8 @@
 # Compass
 ###
 
+config.url_root = "http://railshurts.com"
+
 # Change Compass configuration
 # compass_config do |config|
 #   config.output_style = :compact

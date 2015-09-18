@@ -1,0 +1,8 @@
+%meta{:content => "summary", :name => "twitter:card"}/
+%meta{:content => "@RailsHurts", :name => "twitter:site"}/
+%meta{:content => "@inemation", :name => "twitter:creator"}/
+%meta{:content => "#{settings.url_root}#{current_page.url}", :name => "twitter:url"}/
+- img = current_page.data.image || "images/site-logo.png"
+%meta{:content => "#{settings.url_root}/#{img}" , :name => "twitter:image"}/
+%meta{:content => current_page.data.title, :name => "twitter:title"}/
+%meta{:content => current_page.data.description, :name => "twitter:description"}/

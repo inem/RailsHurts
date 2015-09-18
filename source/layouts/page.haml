@@ -13,6 +13,8 @@
     = javascript_include_tag "https://code.jquery.com/jquery-2.1.4.min.js"
     = javascript_include_tag  "all", "bootstrap.min", "likely"
 
+    = partial "twitter_card"
+
   %body{:class => page_classes}
     .container{:style => "width: 600px"}
       .text-center
@@ -26,59 +28,13 @@
         %br/
       = yield
 
-      :plain
-        <div class="text-center">
-          <br/>
-          <button class="show-comments btn btn-default btn-xs">I have something to say!</button>
-        </div>
 
-        <!-- The empty element required for Disqus to loads comments into -->
-        <div id="disqus_thread"></div>
-
-
-        <div class="text-center">
-          <br/>
-          <div class="likely">
-            <div class="twitter" data-via="railshurts">Tweet</div>
-            <div class="facebook">Share</div>
-            <div class="gplus">Plus</div>
-          </div>
-        </div>
-
-        <script type="text/javascript">
-            $(document).ready(function() {
-                $('.show-comments').on('click', function(){
-                      var disqus_shortname = 'railshurts'; // Replace this value with *your* username.
-
-                      // ajax request to load the disqus javascript
-                      $.ajax({
-                              type: "GET",
-                              url: "http://" + disqus_shortname + ".disqus.com/embed.js",
-                              dataType: "script",
-                              cache: true
-                      });
-                      // hide the button once comments load
-                      $(this).fadeOut();
-                });
-            });
-
-        </script>
+      = partial "disqus"
+      = partial "likely"
 
       %br/
       .text-center
-        / Begin MailChimp Signup Form
-        %h4 Get notified about new posts:
-        #get-free-chapter
-          %form#mc-embedded-subscribe-form.validate{:action => "//nemytchenko.us8.list-manage.com/subscribe/post?u=eac87c13e320dbac697422aa7&id=a3d703793a&topic=posts", :method => "post", :name => "mc-embedded-subscribe-form", :novalidate => "", :target => "_blank"}
-            #mc_embed_signup_scroll
-              / real people should not fill this in and expect good things - do not remove this or risk form bot signups
-              %div{:style => "position: absolute; left: -5000px;"}
-                %input{:name => "b_eac87c13e320dbac697422aa7_a3d703793a", :tabindex => "-1", :type => "text", :value => ""}/
-              #mce-responses.clear
-                #mce-error-response.response{:style => "display:none"}
-                #mce-success-response.response{:style => "display:none"}
-              %input#mce-EMAIL.required.email{:name => "EMAIL", :type => "email", :value => "", :placeholder => "Email address"}/
-              %input#mc-embedded-subscribe.btn.btn-default.btn-xs{:name => "subscribe", :type => "submit", :value => "Subscribe"}/
+        = partial "new_posts"
         %br/
         %a{:href => "http://twitter.com/RailsHurts"}
           %img.center-block{:src => "/images/ruby-patched.png", :width => "60px"}/
@@ -86,23 +42,8 @@
       %br/
       %br/
 
+    = partial "metrika"
+    = partial "analitika"
+
     :plain
-      <meta name="twitter:card" content="summary">
-      <meta name="twitter:image" content="http://railshurts.com/images/site-logo.png">
-      <meta name="twitter:site" content="@RailsHurts">
-      <meta name="twitter:creator" content="@inemation">
-
       <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-
-      <!-- Yandex.Metrika counter --><script type="text/javascript"> (function (d, w, c) { (w[c] = w[c] || []).push(function() { try { w.yaCounter32527030 = new Ya.Metrika({ id:32527030, clickmap:true, trackLinks:true, accurateTrackBounce:true, webvisor:true, trackHash:true }); } catch(e) { } }); var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () { n.parentNode.insertBefore(s, n); }; s.type = "text/javascript"; s.async = true; s.src = "https://mc.yandex.ru/metrika/watch.js"; if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); } })(document, window, "yandex_metrika_callbacks");</script><noscript><div><img src="https://mc.yandex.ru/watch/32527030" style="position:absolute; left:-9999px;" alt="" /></div></noscript><!-- /Yandex.Metrika counter -->
-
-      <script>
-        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-        ga('create', 'UA-67699650-1', 'auto');
-        ga('send', 'pageview');
-
-      </script>
