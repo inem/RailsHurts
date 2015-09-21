@@ -1,14 +1,14 @@
 ---
 title: "Principles and mottos: misunderstood and applied"
 layout: page
-description: At the early days, we accepted few principles unconditionally because they sound like axioms. People use principles and acronyms to compress meanings. By doing so, there's a risk for them to be misunderstood. And I think this is exactly what's happened to with some people in Ruby community.
+description: In the early days, we accepted a few principles unconditionally because they sound like axioms. People use principles and acronyms to compress meanings. By doing so, there's a risk that they'll be misunderstood. I think this is exactly what's happened with some people in the Ruby community.
 ---
 
 <h1><%= current_page.data.title %></h1>
 
-Let's assume for now, what maybe we don't completely understand something. And this little something makes us use Rails in a wrong way.
+Let's assume for now, that maybe we don't completely understand something. This little something makes us use Rails in the wrong way.
 
-At the early days, we accepted few principles unconditionally because they sound like axioms. Here's some of them:
+In the early days, we accepted a few principles unconditionally because they sounded like axioms. Here are some of them:
 
 - [DRY - "Do not repeat yourself"](/principles#dry---do-not-repeat-yourself)
 - [KISS - "Keep it simple, stupid"](/principles#kiss---keep-it-simple-stupid)
@@ -18,26 +18,26 @@ At the early days, we accepted few principles unconditionally because they sound
 - [YAGNI - "You aren't gonna need it"](/principles#yagni---you-arent-gonna-need-it)
 - [Composition over inheritance](/principles#prefer-composition-over-inheritance)
 
-People use principles and acronyms to compress meanings. By doing so, there's a risk for them to be misunderstood. And I think this is exactly what's happened to with some people in Ruby community.
+People use principles and acronyms to compress meanings. By doing so, there's a risk they'll be misunderstood. I think this is exactly what's happened with some people in the Ruby community.
 
 So let's try to decompress them, and see what might be wrong with our understanding.
 
 <%= img 'icon.png', 16 %>
 
 ## DRY - Do not repeat yourself
-This is a simple one, isn't it? Just don't duplicate the code. Whenever you see duplication, you should immediately make a function or a class and reuse it as much as possible. Sounds smart, isn't it?
+This is a simple one, isn't it? Just don't duplicate code. Whenever you see duplication, you should immediately make a function or a class and reuse it as much as possible. Sounds smart, isn't it?
 
-The problem here that it tells us nothing about when it is a good time to apply this principle. And if nothing told, we assume that it should be applied all the time.
+The problem here is that it tells us nothing about when is a good time to apply this principle. If no details are explained, we assume that it should be applied all the time.
 
-And, maybe you forgot, but everything has its price. And the price of  duplication removing is more relations.
+And, maybe you forgot, but everything has its price. And the price of removing duplication is higher coupling.
 
-Guess what's happening when you apply DRY principle at the early stages of application development?
-You're still not sure about what is your application is going to do, and how everything should be organized.
-But you already removed all possible duplications and made things related to each other.
+Guess what happens when you apply DRY principle at the early stages of application development.
+You're still not sure about what your application is going to do, and how everything should be organized.
+But you already removed all possible duplications and made things coupled to each other.
 
-But here's the trick: number of relations increases the complexity of a system.
+But here's the trick: higher coupling increases the complexity of a system.
 
-And this is what Sandi Metz means when she says that duplication is much cheaper than the wrong abstraction.
+This is what Sandi Metz means when she says that duplication is much cheaper than the wrong abstraction.
 
 <blockquote class="twitter-tweet" data-cards="hidden" lang="en"><p lang="en" dir="ltr">“Duplication is far cheaper than the wrong abstraction.” <a href="https://twitter.com/sandimetz">@sandimetz</a> <a href="https://twitter.com/rbonales">@rbonales</a> <a href="http://t.co/zAmc9pvNS4">pic.twitter.com/zAmc9pvNS4</a></p>&mdash; bryce irl (@BonzoESC) <a href="https://twitter.com/BonzoESC/status/442003113910603776">March 7, 2014</a></blockquote>
 
@@ -46,9 +46,9 @@ By reducing the number of duplications, you're introducing abstractions. Your co
 And if they were wrong, you'll be stumbling upon them every single time you need to change your code.
 And they are wrong if you introduced them when your system understanding was not yet mature enough.
 
-This thing is also called *accidental complexity*. By contract with *essential complexity*, it has nothing in common with the complexity of your business domain. It happens because you decide to organize everything in a specific way.
+This thing is also called *accidental complexity*, in contrast to *essential complexity*. It has nothing in common with the complexity of your business domain. It happens because you decide to organize everything in a specific way.
 
-For sure, you shouldn't be wanting that additional pile of complexity in your app. Let's just keep the stuff simple, right?
+For sure, you shouldn't be wanting that additional pile of complexity in your app. Let's just keep things simple, right?
 
 <%= img 'icon.png', 16 %>
 
@@ -56,15 +56,15 @@ For sure, you shouldn't be wanting that additional pile of complexity in your ap
 
 > The KISS principle states that most systems work best if they are kept simple rather than made complicated; therefore simplicity should be a key goal in design and unnecessary complexity should be avoided
 
-Sounds good, right? And we use it to advocate for Rails. Because Rails is so simple, right?
+Sounds good, right? We use it to advocate for Rails, because Rails is so simple, right?
 
-It lets you forget about databases and tons of other technical details which have nothing in common with your application business logic. That's convenient! We can concentrate on just one thing, and all the other stuff we have for free.
-Rails world is so cool, that we don't even had a whole class of problems, which millions of Java programmers struggling every day!
+It lets you forget about databases and tons of other technical details which have nothing in common with your application business logic. That's convenient! We can concentrate on just one thing, and all the other stuff we get for free.
+The Rails world is so cool, that we don't even had a whole class of problems, which millions of Java programmers struggle with every day!
 
 But... is it true?
 
 Have you tried to take a look at the ActiveRecord source code?
-It is insane. It is like a horde of gnomes inside of a beautiful box with two buttons and couple of settings, who do all the kind of things to satisfy your request every time.
+It is insane. It is like a horde of gnomes inside of a beautiful box with two buttons and a couple of settings, who do all kind of things to satisfy your request every time.
 
 <%= img 'principles/activerecord-mess.jpg' %>
 
@@ -72,29 +72,29 @@ Here are some of the things, ActiveRecord gnomes had to do for you:
 
 - input data coercion
 - setting default values
-- input data validations
+- input data validation
 - interaction with the database
 - handling nested structures
-- callbacks(before\_save, etc...)
+- callbacks(before_save, etc...)
 
-Look like tons of work. Doesn't look that simple, right?
+Looks like tons of work. Doesn't look that simple?
 It just has a convenient interface, but inside it is crazy as hell.
 
-But why should you care? Why not just let the Rails core team members suffer from that complexity, and just keep using it in order to keep things -simple- convenient for us?
+But why should you care? Why not just let the Rails core team members suffer from that complexity, and just keep using it in order to keep things -simple- and convenient for us?
 
-Well, at some point when you'll have a pretty big system, you find yourself wanting to have unthinkable.
-Something like polymorphic STI model which belongs to another polymorphic model through another model, which also has some valuable JSON data stored in Postgres using hstore.
+Well, at some point, when you have a pretty big system, you'll find yourself wanting something no one thought of.
+Something like a polymorphic STI model which belongs to another polymorphic model through another model, which also has some valuable JSON data stored in Postgres using hstore.
 
 Of course, there's no reason to want something like this when you develop an application from scratch. But your app is mature and you already have all those associations and other stuff. And it doesn't contradict with Rails-way, quite the contrary.
 So why not?
 
 If you ever try to do something like this, you quickly start to get all kinds of unpredictable errors and misbehavior.
-It is just because those gnomes under the hood go crazy of the complexity they need to handle. Or in other words, nobody from core team supposed that it can be used in such an interesting way. And nobody cared to implement that specific case.
+It is just because those gnomes under the hood go crazy of the complexity they need to handle. Or in other words, nobody from the core team supposed that it would be used in such an interesting way. And nobody cared to implement that specific case.
 
-And at this point it becomes your personal problem, not Rails core team problem. And you have two options:
+At this point it becomes your personal problem, not the Rails core team problem. You have two options:
 
-- jump into ActiveRecord sources, and try to be a hero, who covers that specific scenario and becomes *RAILS CORE CONTRIBUTOR*!!!
-- reorganize your associations to make things little bit simpler
+- jump into the ActiveRecord source, and try to be a hero, who covers that specific scenario and becomes a *RAILS CORE CONTRIBUTOR*!!!
+- reorganize your associations to make things a little bit simpler
 
 Both ways are usually pretty painful.
 Because of the complexity.
@@ -103,7 +103,7 @@ This complexity is just hidden under the mask of convenience from you until some
 
 So let's admit it - Rails is not simple, it is convenient.
 
-One of its conveniences is that we have so little things to configure.
+One of its conveniences is that we have so few things to configure.
 
 <%= img 'icon.png', 16 %>
 
@@ -116,13 +116,13 @@ But some developers take it too literally and go mad with it. They introduce the
 
 The bad thing about conventions is that they are implicit. So if there's too many of them, it can be hard to remember why everything is done in a way it is done.
 
-Even default conventions might become too tight for you when your app grows. So just remember that the price of conventions is flexibility.
+Even default conventions might become too tight for you when your app grows. So just remember that the price of convention is flexibility.
 
 <%= img 'icon.png', 16 %>
 
 ## Fat model, skinny controller
 
-This is a lovely one. I do not remember the author. But in the days we all were suffering from fat controllers, it sounded like a great blessing for us all. Finally, we're figured it out! We shouldn't put all the business logic into controllers! Let's put all that crap into models, right?
+This is a lovely one. I do not remember the author. In the early days, when we all were suffering from fat controllers, it sounded like a great blessing for us all. Finally, we've figured it out! We shouldn't put all the business logic into controllers! Let's put all that crap into models, right?
 
 But why do you think life with fat models is going to be easier?
 It turns out that just moving stuff from one place to another is not enough.
@@ -139,22 +139,22 @@ It just doesn't make sense. Here's my Rails _application_. Here's `app` folder. 
 
 This is where the idea of *DDD* starts floating around. We'll cover it next time, but for now let's not overcomplicate.
 
-Why is it always so painful to upgrade to next version of Rails?
+Why is it always so painful to upgrade to the next version of Rails?
 Can you imagine your application without Rails? I mean your application has some business logic, right? Why can't you re-use it for some small command-line utility, for example?
 
-It is because such code is desperately dependent on Rails. Every single piece of usual Rails application code depends on framework and assumes Rails is there to help.
+It is because such code is desperately dependent on Rails. Every single piece of usual Rails application code depends on the framework and assumes Rails is there to help.
 
-And if you have business logic code intermixed with Rails framework, guess what happens when business logic changes or Rails needs to be upgraded?
+And if you have business logic code intermixed with the Rails framework, guess what happens when business logic changes or Rails needs to be upgraded?
 
 <%= img 'principles/businesslogic-rails.jpg' %>
 
 The PAIN starts to appear from every single change which should be done!
 
-Ideally you business logic code should have as little points of contact with web framework as possible. And it is a very good question how to achieve this.
+Ideally you business logic code should have as few points of contact with the web framework as possible. It is a very good question how to achieve this.
 
 <%= img 'principles/businesslogic-separated.jpg' %>
 
-Moreover, this is not necessarily one-to-one relation. Your app might want to interact with more than one framework, or there could be more than one app, interacting with the same instance of the framework.
+Moreover, this is not necessarily a one-to-one relation. Your app might want to interact with more than one framework, or there could be more than one app, interacting with the same instance of the framework.
 
 <%= img 'icon.png', 16 %>
 
@@ -164,22 +164,22 @@ It looks pretty clear:
 
 > "...a programmer should not add functionality until deemed necessary" ([wikipedia](https://en.wikipedia.org/wiki/You_aren%27t_gonna_need_it))
 
-But wait, every ruby developer in the world who is about to build a new web app, taking Rails.
-Rails provides a lot of functionality, you might not need yet.
+But wait, every Ruby developer in the world who is about to build a new web app, chooses Rails.
+Rails provides a lot of functionality you might not need yet.
 
-What if you don't need persistence layer yet? Wouldn't it be better if you could develop stuff, not thinking about how it is going to be stored in DB? And at one point implement persistence layer, and switch memory storage to MySQL of MongoDB or ElasticSearch or whatever.
+What if you don't need a persistence layer yet? Wouldn't it be better if you could develop stuff, not thinking about how it is going to be stored in a DB And at some point implement a persistence layer, and switch from memory storage to MySQL or MongoDB or ElasticSearch or whatever?
 
-When we take Rails by default, we make critical decisions about storage too early.
-And then we become slaves of the storage or even slaves of DB schema.
+When we choose Rails by default, we make critical decisions about storage too early.
+And then we become slaves of the storage or even slaves of the DB schema.
 
-And what if you don't need web framework at all?
-Have you ever asked this question to yourself? :)
+And what if you don't need a web framework at all?
+Have you ever asked yourself this question? :)
 
 <%= img 'icon.png', 16 %>
 
 ## Prefer composition over inheritance
 
-In ruby we have mixins. And once we learned that inheritance sucks, we tend to switch to modules, assuming it is any better.
+In Ruby we have mixins. And once we learned that inheritance sucks, we tend to switch to modules, assuming it is better.
 
 I'll just post this tweet here:
 
