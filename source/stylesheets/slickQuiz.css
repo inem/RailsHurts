@@ -6,6 +6,8 @@
 .startQuiz,
 .nextQuestion,
 .backToQuestion,
+
+
 .questions li.question,
 .questions li.question .responses,
 .questions li.question .responses .correct,
@@ -18,6 +20,10 @@
    nextQuestion button IS checkAnswer button - so it must be displayed */
 .nextQuestion.checkAnswer {
     display: block;
+}
+
+ul.answers {
+  padding-left: 0px;
 }
 
 ol.questions,
