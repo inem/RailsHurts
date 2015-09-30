@@ -21,15 +21,15 @@ var quizJSON = {
                 {"option": "Rails",      "correct": true},
                 {"option": "Ruby",     "correct": false} // no comma here
             ],
-            "correct": "<p><span>That's right!</span> The letter A is the first letter in the alphabet!</p>",
-            "incorrect": "<p><span>Uhh no.</span> It's the first letter of the alphabet. Did you actually <em>go</em> to kindergarden?</p>" // no comma here
+            "correct": "<p><span>That's right!</span></p><p><span>with_options</span>(options, &block)</p><p>An elegant way to factor duplication out of options passed to a series of method calls. Each method called in the block, with the block variable as the receiver, will have its options merged with the default options hash provided. Each method called on the block variable must take an options hash as its final argumen</p><p><a href='http://api.rubyonrails.org/?q=with_options'>api.rubyonrails.org</a></p>",
+            "incorrect": "<p><span>Uhh no.</span> </p><p><span>with_options</span>(options, &block)</p><p>An elegant way to factor duplication out of options passed to a series of method calls. Each method called in the block, with the block variable as the receiver, will have its options merged with the default options hash provided. Each method called on the block variable must take an options hash as its final argumen</p><p><a href='http://api.rubyonrails.org/?q=with_options'>api.rubyonrails.org</a></p>" // no comma here
         },
         { // Question 2 - Multiple Choice, Multiple True Answers, Select Any
             "q": "reverse_merge",
             "id": 2,
             "a": [
-                {"option": "Ruby",               "correct": false},
-                {"option": "Rails",      "correct": true} // no comma here
+                {"option": "Rails",      "correct": true},
+                {"option": "Ruby",               "correct": false}   // no comma here
             ],
             "correct": "<p><span>Nice!</span> Your cholestoral level is probably doing alright.</p>",
             "incorrect": "<p><span>Hmmm.</span> You might want to reconsider your options.</p>" // no comma here
@@ -38,8 +38,8 @@ var quizJSON = {
             "q": "DateTime.current",
             "id": 3,
             "a": [
-                {"option": "Ruby",                  "correct": false},
-                {"option": "Rails",          "correct": true} // no comma here
+                {"option": "Rails",          "correct": true},
+                {"option": "Ruby",                  "correct": false} // no comma here
             ],
             "correct": "<p><span>Brilliant!</span> You're seriously a genius, (wo)man.</p>",
             "incorrect": "<p><span>Not Quite.</span> You're actually on Planet Earth, in The Milky Way, At a computer. But nice try.</p>" // no comma here
@@ -48,8 +48,8 @@ var quizJSON = {
             "q": " Array(foo: :bar)      # => [[:foo, :bar]]",
             "id":  4,
             "a": [
-                {"option": "Ruby",     "correct": true},
-                {"option": "Rails",   "correct": false} // no comma here
+                {"option": "Rails",   "correct": false},
+                {"option": "Ruby",     "correct": true} // no comma here
             ],
             "correct": "<p><span>Holy bananas!</span> I didn't actually expect you to know that! Correct!</p>",
             "incorrect": "<p><span>Fail.</span> Sorry. You lose. It actually rains approximately 32 inches a year in Michigan.</p>" // no comma here
@@ -58,8 +58,8 @@ var quizJSON = {
             "q": ".to_json",
             "id":  5,
             "a": [
-                {"option": "Ruby",     "correct": true},
-                {"option": "Rails",   "correct": false} // no comma here
+                {"option": "Rails",   "correct": false},
+                {"option": "Ruby",     "correct": true} // no comma here
             ],
             "correct": "<p><span>Holy bananas!</span> I didn't actually expect you to know that! Correct!</p>",
             "incorrect": "<p><span>Fail.</span> Sorry. You lose. It actually rains approximately 32 inches a year in Michigan.</p>" // no comma here
@@ -68,8 +68,8 @@ var quizJSON = {
             "q": "Date.today",
             "id":  6,
             "a": [
-                {"option": "Ruby",     "correct": true},
-                {"option": "Rails",   "correct": false} // no comma here
+                {"option": "Rails",   "correct": false},
+                {"option": "Ruby",     "correct": true} // no comma here
             ],
             "correct": "<p><span>Holy bananas!</span> I didn't actually expect you to know that! Correct!</p>",
             "incorrect": "<p><span>Fail.</span> Sorry. You lose. It actually rains approximately 32 inches a year in Michigan.</p>" // no comma here
@@ -78,8 +78,8 @@ var quizJSON = {
             "q": "a.cycle { |x| puts x }     # print, a, b, c, a, b, c,.. forever..",
             "id":  7,
             "a": [
-                {"option": "Rails",     "correct": false},
-                {"option": "Ruby",   "correct": true} // no comma here
+                {"option": "Ruby",   "correct": true},
+                {"option": "Rails",     "correct": false} // no comma here
             ],
             "correct": "<p><span>Holy bananas!</span> I didn't actually expect you to know that! Correct!</p>",
             "incorrect": "<p><span>Fail.</span> Sorry. You lose. It actually rains approximately 32 inches a year in Michigan.</p>" // no comma here
@@ -88,8 +88,8 @@ var quizJSON = {
             "q": "Time.now",
             "id":  8,
             "a": [
-                {"option": "Ruby",     "correct": true},
-                {"option": "Rails",   "correct": false} // no comma here
+                {"option": "Rails",   "correct": false},
+                {"option": "Ruby",     "correct": true} // no comma here
             ],
             "correct": "<p><span>Holy bananas!</span> I didn't actually expect you to know that! Correct!</p>",
             "incorrect": "<p><span>Fail.</span> Sorry. You lose. It actually rains approximately 32 inches a year in Michigan.</p>" // no comma here
@@ -98,8 +98,8 @@ var quizJSON = {
             "q": ".downcase!",
             "id":  9,
             "a": [
-                {"option": "Ruby",     "correct": true},
-                {"option": "Rails",   "correct": false} // no comma here
+                {"option": "Rails",   "correct": false},
+                {"option": "Ruby",     "correct": true} // no comma here
             ],
             "correct": "<p><span>Holy bananas!</span> I didn't actually expect you to know that! Correct!</p>",
             "incorrect": "<p><span>Fail.</span> Sorry. You lose. It actually rains approximately 32 inches a year in Michigan.</p>" // no comma here
@@ -150,6 +150,136 @@ var quizJSON = {
             "a": [
                 {"option": "Rails",    "correct": true},
                 {"option": "Ruby",     "correct": false} // no comma here
+            ],
+            "correct": "<p><span>Good Job!</span> You must be very observant!</p>",
+            "incorrect": "<p><span>ERRRR!</span> What planet Earth are <em>you</em> living on?!?</p>" // no comma here
+        },
+                              { // Question 15
+            "q": "aaa.instance_values",
+            "id": 15,
+            "a": [
+                {"option": "Rails",    "correct": true},
+                {"option": "Ruby",     "correct": false} // no comma here
+            ],
+            "correct": "<p><span>Good Job!</span> You must be very observant!</p>",
+            "incorrect": "<p><span>ERRRR!</span> What planet Earth are <em>you</em> living on?!?</p>" // no comma here
+        },
+                              { // Question 16
+            "q": "1.in?([1,2])",
+            "id": 16,
+            "a": [
+                {"option": "Rails",    "correct": true},
+                {"option": "Ruby",     "correct": false} // no comma here
+            ],
+            "correct": "<p><span>Good Job!</span> You must be very observant!</p>",
+            "incorrect": "<p><span>ERRRR!</span> What planet Earth are <em>you</em> living on?!?</p>" // no comma here
+        },
+                              { // Question 17
+            "q": "M.reachable?",
+            "id": 17,
+            "a": [
+                {"option": "Rails",    "correct": true},
+                {"option": "Ruby",     "correct": false} // no comma here
+            ],
+            "correct": "<p><span>Good Job!</span> You must be very observant!</p>",
+            "incorrect": "<p><span>ERRRR!</span> What planet Earth are <em>you</em> living on?!?</p>" // no comma here
+        },
+                              { // Question 18
+            "q": "delegate",
+            "id": 18,
+            "a": [
+                {"option": "Rails",    "correct": true},
+                {"option": "Ruby",     "correct": false} // no comma here
+            ],
+            "correct": "<p><span>Good Job!</span> You must be very observant!</p>",
+            "incorrect": "<p><span>ERRRR!</span> What planet Earth are <em>you</em> living on?!?</p>" // no comma here
+        },
+                              { // Question 19
+            "q": "descendants",
+            "id": 19,
+            "a": [
+                {"option": "Rails",    "correct": true},
+                {"option": "Ruby",     "correct": false} // no comma here
+            ],
+            "correct": "<p><span>Good Job!</span> You must be very observant!</p>",
+            "incorrect": "<p><span>ERRRR!</span> What planet Earth are <em>you</em> living on?!?</p>" // no comma here
+        },
+                                      { // Question 20
+            "q": ".to_xml",
+            "id": 20,
+            "a": [
+                {"option": "Rails",    "correct": true},
+                {"option": "Ruby",     "correct": false} // no comma here
+            ],
+            "correct": "<p><span>Good Job!</span> You must be very observant!</p>",
+            "incorrect": "<p><span>ERRRR!</span> What planet Earth are <em>you</em> living on?!?</p>" // no comma here
+        },
+                                      { // Question 21
+            "q": "(1..10).include?(3..7)  # => true </br> (1..10).include?(0..7)  # => false",
+            "id": 21,
+            "a": [
+                {"option": "Rails",    "correct": true},
+                {"option": "Ruby",     "correct": false} // no comma here
+            ],
+            "correct": "<p><span>Good Job!</span> You must be very observant!</p>",
+            "incorrect": "<p><span>ERRRR!</span> What planet Earth are <em>you</em> living on?!?</p>" // no comma here
+        },
+                                              { // Question 22
+            "q": "Hash[]",
+            "id": 22,
+            "a": [
+                {"option": "Rails",    "correct": false},
+                {"option": "Ruby",     "correct": true} // no comma here
+            ],
+            "correct": "<p><span>Good Job!</span> You must be very observant!</p>",
+            "incorrect": "<p><span>ERRRR!</span> What planet Earth are <em>you</em> living on?!?</p>" // no comma here
+        },
+                                                      { // Question 23
+            "q": ".superclass",
+            "id": 23,
+            "a": [
+                {"option": "Rails",    "correct": false},
+                {"option": "Ruby",     "correct": true} // no comma here
+            ],
+            "correct": "<p><span>Good Job!</span> You must be very observant!</p>",
+            "incorrect": "<p><span>ERRRR!</span> What planet Earth are <em>you</em> living on?!?</p>" // no comma here
+        },
+                                                      { // Question 24
+            "q": "420.modulo(4)",
+            "id": 24,
+            "a": [
+                {"option": "Rails",    "correct": false},
+                {"option": "Ruby",     "correct": true} // no comma here
+            ],
+            "correct": "<p><span>Good Job!</span> You must be very observant!</p>",
+            "incorrect": "<p><span>ERRRR!</span> What planet Earth are <em>you</em> living on?!?</p>" // no comma here
+        },
+                                                      { // Question 25
+            "q": "[1,2,3,4,5].sample",
+            "id": 25,
+            "a": [
+                {"option": "Rails",    "correct": false},
+                {"option": "Ruby",     "correct": true} // no comma here
+            ],
+            "correct": "<p><span>Good Job!</span> You must be very observant!</p>",
+            "incorrect": "<p><span>ERRRR!</span> What planet Earth are <em>you</em> living on?!?</p>" // no comma here
+        },
+                                                      { // Question 26
+            "q": '"[%s]" % "same old drag"             # => "[same old drag]”',
+            "id": 26,
+            "a": [
+                {"option": "Rails",    "correct": false},
+                {"option": "Ruby",     "correct": true} // no comma here
+            ],
+            "correct": "<p><span>Good Job!</span> You must be very observant!</p>",
+            "incorrect": "<p><span>ERRRR!</span> What planet Earth are <em>you</em> living on?!?</p>" // no comma here
+        },
+                                                      { // Question 27
+            "q": "FileUtils.rm_r ‘somedir'",
+            "id": 27,
+            "a": [
+                {"option": "Rails",    "correct": false},
+                {"option": "Ruby",     "correct": true} // no comma here
             ],
             "correct": "<p><span>Good Job!</span> You must be very observant!</p>",
             "incorrect": "<p><span>ERRRR!</span> What planet Earth are <em>you</em> living on?!?</p>" // no comma here

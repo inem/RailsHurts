@@ -298,8 +298,8 @@
                         if (plugin.config.perQuestionResponseMessaging || plugin.config.completionResponseMessaging) {
                             // Now let's append the correct / incorrect response messages
                             var responseHTML = $('<ul class="' + responsesClass + '"></ul>');
-                            responseHTML.append('<li class="bg-success ' + correctResponseClass + '">' + question.correct + '</li>');
-                            responseHTML.append('<li class="bg-danger ' + incorrectResponseClass + '">' + question.incorrect + '</li>');
+                            responseHTML.append('<li class=" ' + correctResponseClass + '">' + question.correct + '</li>');
+                            responseHTML.append('<li class=" ' + incorrectResponseClass + '">' + question.incorrect + '</li>');
 
                             // Append responses to question
                             questionHTML.append(responseHTML);
@@ -307,7 +307,7 @@
 
                         // Appends check answer / back / next question buttons
                         if (plugin.config.backButtonText && plugin.config.backButtonText !== '') {
-                            questionHTML.append('<a href="#" class="button btn btn-success ' + backToQuestionClass + '">' + plugin.config.backButtonText + '</a>');
+                            questionHTML.append('<a href="#" class="button btn btn-info ' + backToQuestionClass + '">' + plugin.config.backButtonText + '</a>');
                         }
 
                         var nextText = plugin.config.nextQuestionText;
@@ -317,7 +317,7 @@
 
                         // If we're not showing responses per question, show next question button and make it check the answer too
                         //if (!plugin.config.perQuestionResponseMessaging) {
-                            questionHTML.append('<a href="#" class="button btn btn-success ' + nextQuestionClass + '">' + nextText + '</a>');
+                            questionHTML.append('<a href="#" class="button btn btn-info ' + nextQuestionClass + '">' + nextText + '</a>');
                        /* } else {
                             questionHTML.append('<a href="#" class="button ' + nextQuestionClass + '">' + nextText + '</a>');
                             questionHTML.append('<a href="#" class="button ' + checkAnswerClass + '">' + plugin.config.checkAnswerText + '</a>');
