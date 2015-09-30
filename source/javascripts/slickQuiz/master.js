@@ -3,7 +3,7 @@
 $(function () {
     $('#slickQuiz').slickQuiz({
           numberOfQuestions: 10,
-          // randomSortQuestions: true,
+          randomSortQuestions: true,
           displayQuestionNumber: false,
           events: {
           	onCompleteQuiz: function (info) {
