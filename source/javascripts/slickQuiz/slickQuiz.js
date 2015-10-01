@@ -276,17 +276,18 @@
                             if (answers.hasOwnProperty(i)) {
                                 answer   = answers[i],
                                 optionId = inputName + '_' + i.toString();
-
+                               var optionLabel = '<label for="' + optionId + '">' + answer.option + '</label>';
                                 // If question has >1 true answers and is not a select any, use checkboxes; otherwise, radios
                                 var input = '<input id="' + optionId + '" name="' + inputName +
                                             '" type="' + inputType + '" class="' + checkAnswerClass + '"/> ';
 
-                                var optionLabel = '<label for="' + optionId + '">' + answer.option + '</label>';
+
 
                                 var answerContent = $('<li class = "div-answer btn btn-info btn-lg"></li>')
                                 // var answerContent = $('<div class="col-md-6 div-answer"></div>')
-                                    .append(input)
-                                    .append(optionLabel);
+                                    .append(optionLabel)
+                                    .append(input);
+
                                 answerHTML.append(answerContent);
                             }
                         }
