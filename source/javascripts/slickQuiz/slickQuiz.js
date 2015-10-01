@@ -223,7 +223,7 @@
                     if (questions.hasOwnProperty(i)) {
                         var question = questions[i];
 
-                        var questionHTML = $('<li class="' + questionClass +'" id="question' + (count - 1) + '"></li>');
+                        var questionHTML = $('<li class="well ' + questionClass +'" id="question' + (count - 1) + '"></li>');
 
                         if (plugin.config.displayQuestionCount) {
                             questionHTML.append('<div class="' + questionCountClass + '">' +

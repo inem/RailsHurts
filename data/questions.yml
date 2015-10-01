@@ -1,0 +1,54 @@
+name: Ruby or Ruby on Rails?
+
+main: Let's check whether you remember where Ruby ends and Rails starts
+results: <h5>Learn More</h5><p></p>
+
+level1: Ruby expert!
+level2:	Perfect!
+level3:	Not bad!
+level4:	Nice try"
+level5:	Seriously?
+
+correctAnswerText: <p><span>That's right!</span></p>
+incorrectAnswerText: <p><span>Uhh no.</span></p><p>
+descriptionText: ""
+
+questions:
+- with_options: Rails
+  description: |
+    <p><span>with_options</span>(options, &block)</p>
+    <p>An elegant way to factor duplication out of options passed to a series of method calls.
+    Each method called in the block, with the block variable as the receiver,
+    will have its options merged with the default options hash provided.
+    Each method called on the block variable must take an options hash as its final argumen</p>
+    <p><a href='http://api.rubyonrails.org/?q=with_options'>api.rubyonrails.org</a></p>
+- reverse_merge: Rails
+  description: |
+    <p><span>reverse_merge</span>(other_hash)</p>
+    <p>Like merge but the other way around: Merges the receiver into the argument and returns a new hash with indifferent access as resul</p>
+    <p><a href='http://api.rubyonrails.org/?q=reverse_merge'>api.rubyonrails.org</a></p>
+- DateTime.current: Rails
+- "Array(foo: :bar)      # => [[:foo, :bar]]": Ruby
+- .to_json: Ruby
+- Date.today: Ruby
+- "a.cycle { |x| puts x }     # print, a, b, c, a, b, c,.. forever..": Ruby
+- Time.now: Ruby
+- .downcase!: Ruby
+- class_attribute: Rails
+- alias_attribute: Rails
+- .duplicable?: Rails
+- "Array.wrap(nil)     # => [] </br> Array.wrap([1, 2, 3]) # => [1, 2, 3]</br> Array.wrap(0)    # => [0]": Rails
+- "'hello'.at(4)  # => 'o'": Rails
+- aaa.instance_values: Rails
+- 1.in?([1,2]): Rails
+- M.reachable?: Rails
+- delegate: Rails
+- descendants: Rails
+- .to_xml: Rails
+- "(1..10).include?(3..7)  # => true </br> (1..10).include?(0..7)  # => false": Rails
+- Hash[]: Ruby
+- .superclass: Ruby
+- 420.modulo(4): Ruby
+- "[1,2,3,4,5].sample": Ruby
+- '[%s] % "same old drag"             # => "[same old drag]”': Ruby
+- "FileUtils.rm_r ‘somedir'": Ruby
