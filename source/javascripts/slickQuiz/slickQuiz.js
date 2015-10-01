@@ -276,23 +276,32 @@
                             if (answers.hasOwnProperty(i)) {
                                 answer   = answers[i],
                                 optionId = inputName + '_' + i.toString();
-
+                               var optionLabel = '<label for="' + optionId + '">' + answer.option + '</label>';
                                 // If question has >1 true answers and is not a select any, use checkboxes; otherwise, radios
                                 var input = '<input id="' + optionId + '" name="' + inputName +
                                             '" type="' + inputType + '" class="' + checkAnswerClass + '"/> ';
 
-                                var optionLabel = '<label for="' + optionId + '">' + answer.option + '</label>';
+
 
                                 var answerContent = $('<li class = "div-answer btn btn-info btn-lg"></li>')
                                 // var answerContent = $('<div class="col-md-6 div-answer"></div>')
-                                    .append(input)
-                                    .append(optionLabel);
+                                    .append(optionLabel)
+                                    .append(input);
+
                                 answerHTML.append(answerContent);
                             }
                         }
 
                         // Append answers to question
                         questionHTML.append(answerHTML).attr('data-question-id', question.id);
+                        var nextText = plugin.config.nextQuestionText;
+                        if (plugin.config.completeQuizText && count == questionCount) {
+                            nextText = plugin.config.completeQuizText;
+                        }
+
+                        // If we're not showing responses per question, show next question button and make it check the answer too
+                        //if (!plugin.config.perQuestionResponseMessaging) {
+                            questionHTML.append('<a href="#" class="button btn btn-info ' + nextQuestionClass + '">' + nextText + '</a>');
 
                         // If response messaging is NOT disabled, add it
                         if (plugin.config.perQuestionResponseMessaging || plugin.config.completionResponseMessaging) {
@@ -310,14 +319,7 @@
                             questionHTML.append('<a href="#" class="button btn btn-info ' + backToQuestionClass + '">' + plugin.config.backButtonText + '</a>');
                         }
 
-                        var nextText = plugin.config.nextQuestionText;
-                        if (plugin.config.completeQuizText && count == questionCount) {
-                            nextText = plugin.config.completeQuizText;
-                        }
 
-                        // If we're not showing responses per question, show next question button and make it check the answer too
-                        //if (!plugin.config.perQuestionResponseMessaging) {
-                            questionHTML.append('<a href="#" class="button btn btn-info ' + nextQuestionClass + '">' + nextText + '</a>');
                        /* } else {
                             questionHTML.append('<a href="#" class="button ' + nextQuestionClass + '">' + nextText + '</a>');
                             questionHTML.append('<a href="#" class="button ' + checkAnswerClass + '">' + plugin.config.checkAnswerText + '</a>');
