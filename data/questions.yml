@@ -9,8 +9,6 @@ level3:	Not bad!
 level4:	Nice try"
 level5:	Seriously?
 
-correctAnswerText: <p><span>That's right!</span></p>
-incorrectAnswerText: <p><span>Uhh no.</span></p><p>
 descriptionText: ""
 
 questions:
@@ -20,7 +18,7 @@ questions:
     <p>An elegant way to factor duplication out of options passed to a series of method calls.
     Each method called in the block, with the block variable as the receiver,
     will have its options merged with the default options hash provided.
-    Each method called on the block variable must take an options hash as its final argumen</p>
+    Each method called on the block variable must take an options hash as its final argument</p>
     <p><a href='http://api.rubyonrails.org/?q=with_options'>api.rubyonrails.org</a></p>
 - reverse_merge: Rails
   description: |
