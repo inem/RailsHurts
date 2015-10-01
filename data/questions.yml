@@ -6,7 +6,7 @@ results: <h5>Learn More</h5><p></p>
 level1: Ruby expert!
 level2:	Perfect!
 level3:	Not bad!
-level4:	Nice try"
+level4:	Nice try
 level5:	Seriously?
 
 descriptionText: ""
@@ -31,7 +31,7 @@ questions:
 - "<pre class='prettyprint'>class_attribute</pre>": Rails
 - "<pre class='prettyprint'>alias_attribute</pre>": Rails
 - "<pre class='prettyprint'>.duplicable?</pre>": Rails
-- "Array.wrap(nil)     # => [] Array.wrap([1, 2, 3]) # => [1, 2, 3] Array.wrap(0)    # => [0]</pre>": Rails
+- "<pre class='prettyprint'>Array.wrap(nil)     # => [] Array.wrap([1, 2, 3]) # => [1, 2, 3] Array.wrap(0)    # => [0]</pre>": Rails
 - "<pre class='prettyprint'>'hello'.at(4)  # => 'o'</pre>": Rails
 - "<pre class='prettyprint'>aaa.instance_values</pre>": Rails
 - "<pre class='prettyprint'>1.in?([1,2])</pre>": Rails
