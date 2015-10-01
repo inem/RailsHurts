@@ -64,3 +64,6 @@ input[type="radio"] {
 .startQuiz{
     margin: 25px;
 }
+.zero-padding {
+    padding: 0 !important;
+}

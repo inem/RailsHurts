@@ -276,14 +276,14 @@
                             if (answers.hasOwnProperty(i)) {
                                 answer   = answers[i],
                                 optionId = inputName + '_' + i.toString();
-                               var optionLabel = '<label for="' + optionId + '">' + answer.option + '</label>';
+                               var optionLabel = '<label class = "div-answer btn btn-info btn-lg" for="' + optionId + '">' + answer.option + '</label>';
                                 // If question has >1 true answers and is not a select any, use checkboxes; otherwise, radios
                                 var input = '<input id="' + optionId + '" name="' + inputName +
                                             '" type="' + inputType + '" class="' + checkAnswerClass + '"/> ';
 
 
 
-                                var answerContent = $('<li class = "div-answer btn btn-info btn-lg"></li>')
+                                var answerContent = $('<li class="btn zero-padding"></li>')
                                 // var answerContent = $('<div class="col-md-6 div-answer"></div>')
                                     .append(optionLabel)
                                     .append(input);
