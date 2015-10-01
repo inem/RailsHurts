@@ -293,6 +293,14 @@
 
                         // Append answers to question
                         questionHTML.append(answerHTML).attr('data-question-id', question.id);
+                        var nextText = plugin.config.nextQuestionText;
+                        if (plugin.config.completeQuizText && count == questionCount) {
+                            nextText = plugin.config.completeQuizText;
+                        }
+
+                        // If we're not showing responses per question, show next question button and make it check the answer too
+                        //if (!plugin.config.perQuestionResponseMessaging) {
+                            questionHTML.append('<a href="#" class="button btn btn-info ' + nextQuestionClass + '">' + nextText + '</a>');
 
                         // If response messaging is NOT disabled, add it
                         if (plugin.config.perQuestionResponseMessaging || plugin.config.completionResponseMessaging) {
@@ -310,14 +318,7 @@
                             questionHTML.append('<a href="#" class="button btn btn-info ' + backToQuestionClass + '">' + plugin.config.backButtonText + '</a>');
                         }
 
-                        var nextText = plugin.config.nextQuestionText;
-                        if (plugin.config.completeQuizText && count == questionCount) {
-                            nextText = plugin.config.completeQuizText;
-                        }
 
-                        // If we're not showing responses per question, show next question button and make it check the answer too
-                        //if (!plugin.config.perQuestionResponseMessaging) {
-                            questionHTML.append('<a href="#" class="button btn btn-info ' + nextQuestionClass + '">' + nextText + '</a>');
                        /* } else {
                             questionHTML.append('<a href="#" class="button ' + nextQuestionClass + '">' + nextText + '</a>');
                             questionHTML.append('<a href="#" class="button ' + checkAnswerClass + '">' + plugin.config.checkAnswerText + '</a>');

@@ -52,3 +52,15 @@ input[type="radio"] {
 .div-answer label {
     cursor: pointer;
 }
+.responses {
+    padding-top: 10px;
+}
+.quizName{
+    padding-left: 40px;
+}
+.quizDescription{
+    padding-left: 40px;
+}
+.startQuiz{
+    margin: 25px;
+}
