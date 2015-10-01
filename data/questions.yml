@@ -1,7 +1,20 @@
 name: Ruby or Ruby on Rails?
 
 main: Let's check whether you remember where Ruby ends and Rails starts
-results: <h5>Learn More</h5><p></p>
+results: |
+    <h5>Share this!</h5>
+    <div class="a2a_kit a2a_kit_size_32 a2a_default_style">
+    <a class="a2a_button_facebook"></a>
+    <a class="a2a_button_twitter"></a>
+    <a class="a2a_button_google_plus"></a>
+    <a class="a2a_button_vk"></a>
+    </div>
+    <script type="text/javascript">
+    var a2a_config = a2a_config || {};
+    a2a_config.linkname = "Ruby or Rails Feature?";
+    a2a_config.linkurl = "railshurts.com";
+    </script>
+    <script type="text/javascript" src="//static.addtoany.com/menu/page.js"></script>
 
 level1: Ruby expert!
 level2:	Perfect!
@@ -31,7 +44,7 @@ questions:
 - "<pre class='prettyprint'>class_attribute</pre>": Rails
 - "<pre class='prettyprint'>alias_attribute</pre>": Rails
 - "<pre class='prettyprint'>.duplicable?</pre>": Rails
-- "<pre class='prettyprint'>Array.wrap(nil)     # => [] Array.wrap([1, 2, 3]) # => [1, 2, 3] Array.wrap(0)    # => [0]</pre>": Rails
+- "<pre class='prettyprint'>Array.wrap(nil)     # => []<br/>Array.wrap([1, 2, 3]) # => [1, 2, 3]<br/>Array.wrap(0)    # => [0]</pre>": Rails
 - "<pre class='prettyprint'>'hello'.at(4)  # => 'o'</pre>": Rails
 - "<pre class='prettyprint'>aaa.instance_values</pre>": Rails
 - "<pre class='prettyprint'>1.in?([1,2])</pre>": Rails
