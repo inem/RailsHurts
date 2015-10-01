@@ -14,6 +14,14 @@ def optionArray(right)
   }
 end
 
+def opposite(ans)
+  ans == "Ruby" ? "Rails" : "Ruby"
+end
+
+def p_span(arg)
+  "<p><span>#{arg}</span></p>"
+end
+
 config = YAML.load_file('../data/questions.yml')
 
 infoOpts = ["name", "main", "results", "level1", "level2", "level3", "level4", "level5"]
@@ -25,18 +33,24 @@ id = 0
 result = {
   info: config.select{|k, v| infoOpts.include? k },
   questions: config["questions"].map { |question|
-    correct = question["correct"] || correctDefault
-    incorrect = question["incorrect"] || incorrectDefault
+    questionCopy = question.dup
+    questionCopy.delete "correctText"
+    questionCopy.delete "incorrectText"
+    questionCopy.delete "descriptionText"
+
+    q = questionCopy.to_a[0]
+    answer = q[1]
+
     description = question["description"] || descriptionDefault
-    question.delete "correctText"
-    question.delete "incorrectText"
-    question.delete "descriptionText"
-    q = question.to_a[0]
+
+    correct = question["correct"] || p_span("Yes, this is #{answer}")
+    incorrect = question["incorrect"] || p_span("No, this is not #{opposite(answer)}")
+
     id += 1
     {
       q: q[0],
       id: id,
-      a: optionArray(q[1]),
+      a: optionArray(answer),
       correct: correct + description,
       incorrect: incorrect + description
     }
