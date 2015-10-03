@@ -1,4 +1,4 @@
-name: Ruby or Ruby on Rails?
+name: Ruby or Rails?
 
 main: Let's check whether you remember where Ruby ends and Rails starts
 results: |
@@ -11,10 +11,35 @@ results: |
     </div>
     <script type="text/javascript">
     var a2a_config = a2a_config || {};
-    a2a_config.linkname = "Ruby or Rails Feature?";
-    a2a_config.linkurl = "railshurts.com";
+    a2a_config.linkname = "Do you know if it is Ruby or Rails?";
+    a2a_config.linkurl = "railshurts.com/quiz";
     </script>
     <script type="text/javascript" src="//static.addtoany.com/menu/page.js"></script>
+
+    <div class="row" id="get-free-chapter">
+      <div class="col-md-3"></div>
+      <div class="col-md-3">
+        <img src="/images/book.png" style="border: 1px solid gray" width="120">
+      </div>
+      <div class="col-md-4">
+        <form action="//nemytchenko.us8.list-manage.com/subscribe/post?u=eac87c13e320dbac697422aa7&amp;id=a3d703793a" class="validate" id="mc-embedded-subscribe-form" method="post" name="mc-embedded-subscribe-form" novalidate="" target="_blank">
+          <div id="mc_embed_signup_scroll">
+            <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups -->
+            <div style="position: absolute; left: -5000px;">
+              <input name="b_eac87c13e320dbac697422aa7_a3d703793a" tabindex="-1" type="text" value="">
+            </div>
+            <div class="clear" id="mce-responses">
+              <div class="response" id="mce-error-response" style="display:none"></div>
+              <div class="response" id="mce-success-response" style="display:none"></div>
+            </div>
+            <p>Subscribe and get first version for free:</p>
+            <input class="required email" id="mce-EMAIL" name="EMAIL" placeholder="Email address" style="margin-bottom:6px" type="email" value="">
+            <br>
+            <input class="btn btn-primary btn-xs" id="mc-embedded-subscribe" name="subscribe" type="submit" value="Get free chapter!">
+          </div>
+        </form>
+      </div>
+    </div>
 
 level1: Ruby expert!
 level2:	Perfect!
