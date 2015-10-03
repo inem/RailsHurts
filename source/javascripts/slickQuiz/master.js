@@ -8,7 +8,7 @@ $(function () {
           events: {
           	onCompleteQuiz: function (info) {
           		jQuery.ajax ({
-          			url: 'ask_statistic/add_stats',
+          			url: 'http://protected-retreat-8094.herokuapp.com/ask_statistic/add_stats',
           			type: "POST",
           			data: JSON.stringify({stats: info.stat}),
           			dataType: "json",
