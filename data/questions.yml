@@ -58,32 +58,220 @@ questions:
     will have its options merged with the default options hash provided.
     Each method called on the block variable must take an options hash as its final argumen</p>
     <p><a href='http://api.rubyonrails.org/?q=with_options'>api.rubyonrails.org</a></p>
+
 - "reverse_merge": Rails
+  description: |
+    <pre class='prettyprint'>reverse_merge</pre>
+    <p>Like merge but the other way around: Merges the receiver into the argument and returns
+    a new hash with indifferent access as result:</p>
+    <pre class='prettyprint'>
+    hash = ActiveSupport::HashWithIndifferentAccess.new
+    hash['a'] = nil
+    hash.reverse_merge(a: 0, b: 1) # => {"a"=>nil, "b"=>1}
+    </pre>
+    <p><a href='http://api.rubyonrails.org/?q=reverse_merge'>api.rubyonrails.org</a></p>
+
 - "DateTime.current": Rails
+  description: |
+    <pre class='prettyprint'>DateTime.current</pre>
+    <p>Returns Time.zone.now.to_datetime when
+    Time.zone or config.time_zone are set,
+    otherwise returns Time.now.to_datetime.</p>  
+    <p><a href='http://api.rubyonrails.org/classes/DateTime.html#method-c-current'>api.rubyonrails.org</a></p>
+
 - "Array(foo: :bar)      # => [[:foo, :bar]]": Ruby
+  description: |
+    <pre class='prettyprint'>Array(arg) → array</pre>
+    <p>Returns arg as an Array.
+    First tries to call to_ary on arg,
+    then to_a.</p>  
+    <p><a href='http://ruby-doc.org/core-2.2.0/Kernel.html#method-i-Array'>ruby-doc.org</a></p>
+
 - ".to_json": Ruby
+  description: |
+    <pre class='prettyprint'>.to_json</pre>
+    <p>Creating a JSON string for communication or serialization is just as simple.</p>
+    <pre class='prettyprint'>
+    require 'json'
+    puts {:hello => "goodbye"}.to_json => "{\"hello\":\"goodbye\"}"
+    </pre>
+    <p><a href='http://ruby-doc.org/stdlib-2.0.0/libdoc/json/rdoc/JSON.html'>ruby-doc.org</a></p>
+
 - "Date.today": Ruby
+  description: |
+    <pre class='prettyprint'>Date.today</pre>
+    <p>Creates a date object denoting the present day.</p>
+    <p><a href='http://ruby-doc.org/stdlib-2.1.1/libdoc/date/rdoc/Date.html#method-c-today'>ruby-doc.org</a></p>
+
 - "a.cycle { |x| puts x }     # print, a, b, c, a, b, c,.. forever..": Ruby
+  description: |
+    <pre class='prettyprint'>cycle(n=nil) { |obj| block } → nil</pre>
+    <p>Calls block for each element of enum repeatedly n times or forever if none or nil is given.
+    If a non-positive number is given or the collection is empty, does nothing.
+    Returns nil if the loop has finished without getting interrupted.</p>
+    <p><a href='http://ruby-doc.org/core-2.2.3/Enumerable.html#method-i-cycle'>ruby-doc.org</a></p>
+
 - "Time.now": Ruby
+  description: |
+    <pre class='prettyprint'>Time.now</pre>
+    <p>Alias for Time.new. Returns a Time object initialized to the current system time.</p>
+    <p><a href='http://ruby-doc.org/core-2.1.5/Time.html#method-c-now'>ruby-doc.org</a></p>
+
 - ".downcase!": Ruby
+  description: |
+    <pre class='prettyprint'>downcase! → str or nil</pre>
+    <p>Downcases the contents of str, returning nil if no changes were made.</p>
+    <p><a href='http://ruby-doc.org/core-2.1.0/String.html#method-i-downcase-21'>ruby-doc.org</a></p>
+
 - "class_attribute": Rails
+  description: |
+    <pre class='prettyprint'>class_attribute</pre>
+    <p>Declare a class-level attribute whose value is inheritable by subclasses.
+    Subclasses can change their own value and it will not impact parent class.</p>
+    <pre class='prettyprint'>
+    class Base
+    class_attribute :setting
+    end
+
+    class Subclass < Base
+    end
+
+    Base.setting = true
+    Subclass.setting            # => true
+    Subclass.setting = false
+    Subclass.setting            # => false
+    Base.setting                # => true
+    </pre>
+    <p><a href='http://api.rubyonrails.org/classes/Class.html#method-i-class_attribute'>api.rubyonrails.org</a></p>
+
 - "alias_attribute": Rails
+  description: |
+    <pre class='prettyprint'>alias_attribute</pre>
+    <p>Allows you to make aliases for attributes, which includes getter, setter, and query methods.</p>
+    <pre class='prettyprint'>
+    class Content < ActiveRecord::Base
+    # has a title attribute
+    end
+
+    class Email < Content
+      alias_attribute :subject, :title
+    end
+
+    e = Email.find(1)
+    e.title    # => "Superstars"
+    e.subject  # => "Superstars"
+    e.subject? # => true
+    e.subject = "Megastars"
+    e.title    # => "Megastars"
+    </pre>
+    <p><a href='http://api.rubyonrails.org/classes/Module.html#method-i-alias_attribute'>api.rubyonrails.org</a></p>
+
 - ".duplicable?": Rails
+  description: |
+    <pre class='prettyprint'>.duplicable?</pre>
+    <p>Can you safely dup this object?False for nil, false, true,
+    symbol, number and BigDecimal(in 1.9.x) objects; true otherwise.</p>
+    <p><a href='http://api.rubyonrails.org/classes/Object.html#method-i-duplicable-3F'>api.rubyonrails.org</a></p>
+
 - "Array.wrap(nil)     # => []<br/>Array.wrap([1, 2, 3]) # => [1, 2, 3]<br/>Array.wrap(0)    # => [0]": Rails
+  description: |
+    <pre class='prettyprint'>Array.wrap</pre>
+    <p>Wraps its argument in an array unless it is already an array (or array-like).</p>
+    <p><a href='http://api.rubyonrails.org/classes/Array.html#method-c-wrap'>api.rubyonrails.org</a></p>
+
 - "'hello'.at(4)  # => 'o'": Rails
+  description: |
+    <pre class='prettyprint'>at(position)</pre>
+    <p>If you pass a single Fixnum, returns a substring of one character at that position.
+    The first character of the string is at position 0, the next at position 1, and so on.</p>
+    <p>If a range is supplied, a substring containing characters at offsets given by the range is returned.
+    In both cases, if an offset is negative, it is counted from the end of the string.
+    Returns nil if the initial offset falls outside the string.
+    Returns an empty string if the beginning of the range is greater than the end of the string.</p>
+    <p>If a Regexp is given, the matching portion of the string is returned.
+    If a String is given, that given string is returned if it occurs in the string.
+    In both cases, nil is returned if there is no match.</p>
+    <p><a href='http://api.rubyonrails.org/classes/String.html#method-i-at'>api.rubyonrails.org</a></p>
+
 - "aaa.instance_values": Rails
+  description: |
+    <pre class='prettyprint'>instance_values</pre>
+    <p>Returns a hash with string keys that maps instance variable names without “@” to their corresponding values.</p>
+    <p><a href='http://api.rubyonrails.org/classes/Object.html#method-i-instance_values'>api.rubyonrails.org</a></p>
+
 - "1.in?([1,2])": Rails
+  description: |
+    <pre class='prettyprint'>in?(another_object)</pre>
+    <p>Returns true if this object is included in the argument.
+    Argument must be any object which responds to #include?.</p>
+    <p><a href='http://api.rubyonrails.org/classes/Object.html#method-i-in-3F'>api.rubyonrails.org</a></p>
+
 - "M.reachable?": Rails
+  description: |
+    <pre class='prettyprint'>Module.reachable?</pre>
+    <p>Returns true if module not anonymous and resolving its name gives itself.</p>
+    <p><a href='http://apidock.com/rails/Module/reachable%3F'>apidock.com</a></p>
+
 - "delegate": Rails
+  description: |
+    <pre class='prettyprint'>delegate(*methods)</pre>
+    <p>Provides a delegate class method to easily expose contained objects' public methods as your own.</p>
+    <p><a href='http://api.rubyonrails.org/classes/Module.html#method-i-delegate'>api.rubyonrails.org</a></p>
+
 - "descendants": Rails
+  description: |
+    <pre class='prettyprint'>Class.descendants</pre>
+    <p>Returns descendants of class.</p>
+    <p><a href='http://apidock.com/rails/Class/descendants'>apidock.com</a></p>
+
 - ".to_xml": Rails
+  description: |
+    <pre class='prettyprint'>.to_xml</pre>
+    <p>Returns a string containing an XML representation of its receiver.</p>
+    <p><a href='http://api.rubyonrails.org/classes/Hash.html#method-i-to_xml'>api.rubyonrails.org</a></p>
+
 - "(1..10).include?(3..7)  # => true </br>(1..10).include?(0..7)  # => false": Rails
+  description: |
+    <pre class='prettyprint'>include?(p1)</pre>
+    <p>Returns true if the given object is present in self, false otherwise.</p>
+    <p><a href='http://apidock.com/ruby/Array/include%3F'>apidock.com</a></p>
+
 - "Hash[]": Ruby
+  description: |
+    <pre class='prettyprint'>Hash::[]</pre>
+    <p>Creates a new hash populated with the given objects.</p>
+    <p><a href='http://ruby-doc.org/core-2.1.5/Hash.html#method-c-5B-5D'>ruby-doc.org</a></p>
+
 - ".superclass": Ruby
+  description: |
+    <pre class='prettyprint'>.superclass</pre>
+    <p>Returns the superclass of class, or nil.</p>
+    <p><a href='http://ruby-doc.org/core-1.9.3/Class.html#method-i-superclass'>ruby-doc.org</a></p>
+
 - "420.modulo(4)": Ruby
+  description: |
+    <pre class='prettyprint'>.modulo</pre>
+    <p>Returns modulus obtained by dividing self to by argument.</p>
+    <p><a href='http://ruby-doc.org/core-1.9.3/Numeric.html#method-i-modulo'>ruby-doc.org</a></p>
+
 - "[1,2,3,4,5].sample": Ruby
+  description: |
+    <pre class='prettyprint'>.sample</pre>
+    <p>Choose a random element or n random elements from the array.</p>
+    <p><a href='http://ruby-doc.org/core-2.2.0/Array.html#method-i-sample'>ruby-doc.org</a></p>
+
 - "'[%s] % 'same old drag'             # => '[same old drag]'": Ruby
+  description: |
+    <pre class='prettyprint'>str % arg → new_str</pre>
+    <p>Format — Uses str as a format specification, and returns the result of applying it to arg.</p>
+    <p><a href='http://ruby-doc.org/core-2.1.0/String.html#method-i-25'>ruby-doc.org</a></p>
+
 - "FileUtils.rm_r ‘somedir'": Ruby
+  description: |
+    <pre class='prettyprint'>rm_r(list, options = {})</pre>
+    <p>remove files list[0] list[1]… If list[n] is a directory, removes its all contents recursively.</p>
+    <p><a href='http://ruby-doc.org/stdlib-1.9.3/libdoc/fileutils/rdoc/FileUtils.html#method-c-rm_r'>ruby-doc.org</a></p>
+
 - ".blank?": Rails
   description: |
     <pre class='prettyprint'>blank?</pre>
