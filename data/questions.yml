@@ -77,7 +77,7 @@ questions:
 - "delegate": Rails
 - "descendants": Rails
 - ".to_xml": Rails
-- "(1..10).include?(3..7)  # => true </br> (1..10).include?(0..7)  # => false": Rails
+- "(1..10).include?(3..7)  # => true </br>(1..10).include?(0..7)  # => false": Rails
 - "Hash[]": Ruby
 - ".superclass": Ruby
 - "420.modulo(4)": Ruby
