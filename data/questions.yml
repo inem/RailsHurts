@@ -84,3 +84,13 @@ questions:
 - "[1,2,3,4,5].sample": Ruby
 - "'[%s] % 'same old drag'             # => '[same old drag]'": Ruby
 - "FileUtils.rm_r ‘somedir'": Ruby
+- ".blank?": Rails
+  description: |
+    <pre class='prettyprint'>blank?</pre>
+    <p>An object is blank if it’s false, empty, or a whitespace string.
+    For example, ”, ‘ ’, nil, [], and {} are all blank.</p>
+    <p>This simplifies</p>
+    <pre class='prettyprint'>address.nil? || address.empty?</pre>
+    <p>to</p>
+    <pre class='prettyprint'>address.blank?</pre>
+    <p><a href='http://api.rubyonrails.org/classes/Object.html#method-i-blank-3F'>api.rubyonrails.org</a></p>
