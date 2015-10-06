@@ -22,6 +22,10 @@ def p_span(arg)
   "<p><span>#{arg}</span></p>"
 end
 
+def pretty(arg)
+  "<pre class='prettyprint'>#{arg}</pre>"
+end
+
 config = YAML.load_file('../data/questions.yml')
 
 infoOpts = ["name", "main", "results", "level1", "level2", "level3", "level4", "level5"]
@@ -48,7 +52,7 @@ result = {
 
     id += 1
     {
-      q: q[0],
+      q: pretty(q[0]),
       id: id,
       a: optionArray(answer),
       correct: correct + description,
