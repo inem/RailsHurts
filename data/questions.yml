@@ -2,6 +2,7 @@ name: Ruby or Rails?
 
 main: Let's check whether you remember where Ruby ends and Rails starts
 results: |
+    <h4><a href="/">Go home page</a></h4>
     <h5>Share this!</h5>
     <div class="a2a_kit a2a_kit_size_32 a2a_default_style">
     <a class="a2a_button_facebook"></a>
