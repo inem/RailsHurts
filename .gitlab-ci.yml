@@ -5,7 +5,8 @@ image: registry.gitlab.com/inem/inem.at:middleman
 
 cache:
   paths:
-  - vendor
+  - .bundle
+  - vendor/
 
 stages:
   - test
