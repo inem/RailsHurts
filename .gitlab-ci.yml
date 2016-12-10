@@ -36,6 +36,7 @@ generate:
 deploy:
   stage: deploy
   script:
+  - bundle install --path vendor
   - bundle exec s3_website push
   only:
   - master
