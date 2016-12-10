@@ -9,6 +9,7 @@ cache:
 
 stages:
   - test
+  - generate
   - deploy
 
 test:
@@ -19,11 +20,20 @@ test:
   except:
     - master
 
-deploy:
-  stage: deploy
+generate:
+  stage: generate
   script:
   - bundle install --path vendor
   - bundle exec middleman build
+  only:
+  - master
+  artifacts:
+    paths:
+      - build
+
+deploy:
+  stage: deploy
+  script:
   - bundle exec s3_website push
   only:
   - master
@@ -32,4 +42,4 @@ check-links:
   stage: deploy
   script:
   - bundle install --path vendor
-  - awesome_bot s3_website.yml source/*.md.erb source/*.html.haml source/*.haml --allow-redirect --allow-dupe
+  - awesome_bot s3_website.yml build/*.html --allow-redirect --allow-dupe
