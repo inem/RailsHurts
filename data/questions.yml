@@ -2,8 +2,15 @@ name: Ruby or Rails?
 
 main: Let's check whether you remember where Ruby ends and Rails starts
 results: |
-    <h4><a href="/">Go home page</a></h4>
-    <h5>Share this!</h5>
+    <br/>
+    <h4>• Check out <a href="/current_state/">current state of Ruby on Rails community</a></h4>
+    <h4>• See how we <a href='/principles/'>misunderstand software developement principles</a>, but keep applying them</a></h4>
+    <h4>• Learn <a href="/mess/">why your code turns into a mess</a> every time</h4>
+    <h4>• Hire <a href="/team/">our team</a></h4>
+    <br/>
+    <br/>
+
+    <h5>Share the quiz!</h5>
     <div class="a2a_kit a2a_kit_size_32 a2a_default_style">
     <a class="a2a_button_facebook"></a>
     <a class="a2a_button_twitter"></a>
@@ -17,6 +24,8 @@ results: |
     </script>
     <script type="text/javascript" src="//static.addtoany.com/menu/page.js"></script>
 
+    <br/>
+    <br/>
     <div class="row" id="get-free-chapter">
       <div class="col-md-3"></div>
       <div class="col-md-3">
@@ -77,7 +86,7 @@ questions:
     <pre class='prettyprint'>DateTime.current</pre>
     <p>Returns Time.zone.now.to_datetime when
     Time.zone or config.time_zone are set,
-    otherwise returns Time.now.to_datetime.</p>  
+    otherwise returns Time.now.to_datetime.</p>
     <p><a href='http://api.rubyonrails.org/classes/DateTime.html#method-c-current'>api.rubyonrails.org</a></p>
 
 - "Array(foo: :bar)      # => [[:foo, :bar]]": Ruby
@@ -85,18 +94,18 @@ questions:
     <pre class='prettyprint'>Array(arg) → array</pre>
     <p>Returns arg as an Array.
     First tries to call to_ary on arg,
-    then to_a.</p>  
+    then to_a.</p>
     <p><a href='http://ruby-doc.org/core-2.2.0/Kernel.html#method-i-Array'>ruby-doc.org</a></p>
 
-- ".to_json": Ruby
-  description: |
-    <pre class='prettyprint'>.to_json</pre>
-    <p>Creating a JSON string for communication or serialization is just as simple.</p>
-    <pre class='prettyprint'>
-    require 'json'
-    puts {:hello => "goodbye"}.to_json => "{\"hello\":\"goodbye\"}"
-    </pre>
-    <p><a href='http://ruby-doc.org/stdlib-2.0.0/libdoc/json/rdoc/JSON.html'>ruby-doc.org</a></p>
+#- ".to_json": Ruby
+# description: |
+#    <pre class='prettyprint'>.to_json</pre>
+#    <p>Creating a JSON string for communication or serialization is just as simple.</p>
+#    <pre class='prettyprint'>
+#    require 'json'
+#    puts {:hello => "goodbye"}.to_json => "{\"hello\":\"goodbye\"}"
+#    </pre>
+#    <p><a href='http://ruby-doc.org/stdlib-2.0.0/libdoc/json/rdoc/JSON.html'>ruby-doc.org</a></p>
 
 - "Date.today": Ruby
   description: |
@@ -213,11 +222,11 @@ questions:
     <p>Returns true if module not anonymous and resolving its name gives itself.</p>
     <p><a href='http://apidock.com/rails/Module/reachable%3F'>apidock.com</a></p>
 
-- "delegate": Rails
-  description: |
-    <pre class='prettyprint'>delegate(*methods)</pre>
-    <p>Provides a delegate class method to easily expose contained objects' public methods as your own.</p>
-    <p><a href='http://api.rubyonrails.org/classes/Module.html#method-i-delegate'>api.rubyonrails.org</a></p>
+#- "delegate": Rails
+#  description: |
+#    <pre class='prettyprint'>delegate(*methods)</pre>
+#    <p>Provides a delegate class method to easily expose contained objects' public methods as your own.</p>
+#    <p><a href='http://api.rubyonrails.org/classes/Module.html#method-i-delegate'>api.rubyonrails.org</a></p>
 
 - "descendants": Rails
   description: |
@@ -233,9 +242,13 @@ questions:
 
 - "(1..10).include?(3..7)  # => true </br>(1..10).include?(0..7)  # => false": Rails
   description: |
-    <pre class='prettyprint'>include?(p1)</pre>
-    <p>Returns true if the given object is present in self, false otherwise.</p>
-    <p><a href='http://apidock.com/ruby/Array/include%3F'>apidock.com</a></p>
+    <pre class='prettyprint'>
+    (1..5).include?(2..3)  # => false
+    require 'active_support/all'
+    (1..5).include?(2..3)  # => true
+    </pre>
+    <p>Active Support extends these methods so that the argument may be another range in turn.</p>
+    <p><a href='http://guides.rubyonrails.org/active_support_core_extensions.html#include-questionmark'>guides.rubyonrails.org</a></p>
 
 - "Hash[]": Ruby
   description: |
@@ -261,7 +274,7 @@ questions:
     <p>Choose a random element or n random elements from the array.</p>
     <p><a href='http://ruby-doc.org/core-2.2.0/Array.html#method-i-sample'>ruby-doc.org</a></p>
 
-- "'[%s] % 'same old drag'             # => '[same old drag]'": Ruby
+- "'[%s]' % 'same old drag'             # => '[same old drag]'": Ruby
   description: |
     <pre class='prettyprint'>str % arg → new_str</pre>
     <p>Format — Uses str as a format specification, and returns the result of applying it to arg.</p>
