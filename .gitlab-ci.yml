@@ -8,25 +8,14 @@ cache:
   untracked: true
 
 stages:
-  - test
   - generate
-  - deploy
-
-test:
-  stage: test
-  script:
-  - bundle install --path vendor
-  - bundle exec middleman build
-  except:
-    - master
+  - post-generate
 
 generate:
   stage: generate
   script:
   - bundle install --path vendor
   - bundle exec middleman build
-  only:
-  - master
   artifacts:
     paths:
       - build
@@ -34,15 +23,25 @@ generate:
       - .bundle
 
 deploy:
-  stage: deploy
+  stage: post-generate
   script:
   - bundle install --path vendor
   - bundle exec s3_website push
   only:
   - master
 
+pages:
+  stage: post-generate
+  script:
+  - cp build public
+  except:
+  - master
+  artifacts:
+    paths:
+    - public
+
 check-links:
-  stage: deploy
+  stage: post-generate
   script:
   - bundle install --path vendor
   - awesome_bot s3_website.yml build/*.html --allow-redirect --allow-dupe
