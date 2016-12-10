@@ -12,6 +12,7 @@ stages:
   - deploy
 
 test:
+  stage: test
   script:
   - bundle install --path vendor
   - bundle exec middleman build
@@ -19,6 +20,7 @@ test:
     - master
 
 deploy:
+  stage: deploy
   script:
   - bundle install --path vendor
   - bundle exec middleman build
