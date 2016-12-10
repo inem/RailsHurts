@@ -33,7 +33,7 @@ deploy:
 pages:
   stage: post-generate
   script:
-  - cp build public
+  - mv build public
   except:
   - master
   artifacts:
