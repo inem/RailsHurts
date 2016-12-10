@@ -5,9 +5,7 @@ image: registry.gitlab.com/inem/railshurts
 #
 
 cache:
-  paths:
-  - .bundle
-  - vendor/
+  untracked: true
 
 stages:
   - test
