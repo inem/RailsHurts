@@ -46,7 +46,8 @@ write-good:
   stage: post-generate
   script:
     - npm install -g write-good
-    - write-good source/*.md
+    - write-good ./source/*.md.erb
+    - write-good ./source/*.html.haml
   allow_failure: true
 
 check-links:
