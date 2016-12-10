@@ -1,7 +1,8 @@
 # This file is a template, and might need editing before it works on your project.
 # Full project: https://gitlab.com/pages/middleman
-image: registry.gitlab.com/inem/inem.at:middleman
-#registry.gitlab.com/inem/railshurts
+image: registry.gitlab.com/inem/railshurts
+# registry.gitlab.com/inem/inem.at:middleman
+#
 
 cache:
   paths:
