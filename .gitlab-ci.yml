@@ -31,6 +31,7 @@ deploy:
   - master
 
 pages:
+  image: alpine
   stage: post-generate
   script:
   - mv build public
@@ -39,6 +40,14 @@ pages:
   artifacts:
     paths:
     - public
+
+write-good:
+  image: node
+  stage: post-generate
+  script:
+    - npm install -g write-good
+    - write-good source/*.md
+  allow_failure: true
 
 check-links:
   stage: post-generate
