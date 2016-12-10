@@ -30,6 +30,8 @@ generate:
   artifacts:
     paths:
       - build
+      - vendor
+      - .bundle
 
 deploy:
   stage: deploy
