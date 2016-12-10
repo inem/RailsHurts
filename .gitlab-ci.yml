@@ -32,4 +32,4 @@ check-links:
   stage: deploy
   script:
   - bundle install --path vendor
-  - awesome_bot s3_website.yml source/index.html.haml data/events.yml --allow-redirect --allow-dupe
+  - awesome_bot s3_website.yml source/*.md.erb source/*.html.haml source/*.haml --allow-redirect --allow-dupe
