@@ -46,3 +46,4 @@ check-links:
   script:
   - bundle install --path vendor
   - awesome_bot s3_website.yml build/*.html --allow-redirect --allow-dupe
+  allow_failure: true
