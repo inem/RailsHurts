@@ -8,6 +8,7 @@ cache:
   - vendor
 
 stages:
+  - test
   - deploy
 
 test:
