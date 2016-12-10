@@ -15,3 +15,5 @@ gem "tzinfo-data", platforms: [:mswin, :mingw, :jruby]
 
 gem "s3_website"
 # gem "middleman-twitter_cards"
+
+gem "awesome_bot"

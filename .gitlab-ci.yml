@@ -1,28 +1,48 @@
 # This file is a template, and might need editing before it works on your project.
 # Full project: https://gitlab.com/pages/middleman
-image: ruby:2.3
+image: registry.gitlab.com/inem/railshurts
+# registry.gitlab.com/inem/inem.at:middleman
+#
 
 cache:
-  paths:
-  - vendor
+  untracked: true
 
-test:
-  script:
-  - apt-get update -yqqq
-  - apt-get install -y nodejs
-  - bundle install --path vendor
-  - bundle exec middleman build
-  except:
-    - master
+stages:
+  - generate
+  - post-generate
 
-pages:
+generate:
+  stage: generate
   script:
-  - apt-get update -yqqq
-  - apt-get install -y nodejs
   - bundle install --path vendor
   - bundle exec middleman build
   artifacts:
     paths:
-    - public
+      - build
+      - vendor
+      - .bundle
+
+deploy:
+  stage: post-generate
+  script:
+  - bundle install --path vendor
+  - bundle exec s3_website push
   only:
   - master
+
+pages:
+  stage: post-generate
+  script:
+  - cp build public
+  except:
+  - master
+  artifacts:
+    paths:
+    - public
+
+check-links:
+  stage: post-generate
+  script:
+  - bundle install --path vendor
+  - awesome_bot s3_website.yml build/*.html --allow-redirect --allow-dupe
+  allow_failure: true
