@@ -45,7 +45,7 @@ pages:
     - public
 
 # https://github.com/werk85/node-html-to-text
-post-generate:
+generate-text:
   image: node
   stage: post-generate
   script:
