@@ -63,6 +63,6 @@ yaspeller:
   stage: post-generate
   script:
     - npm install yaspeller -g
-    - yaspeller source/*.md.erb
-    - yaspeller source/*.html.haml
+    - yaspeller source/*.md.erb --ignore-urls --ignore-tags --find-repeat-words
+    - yaspeller source/*.html.haml --ignore-urls --ignore-tags --find-repeat-words
   allow_failure: true
