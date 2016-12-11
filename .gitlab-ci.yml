@@ -23,6 +23,7 @@ generate:
 
 deploy:
   stage: post-generate
+  environment: production
   script:
   - bundle install --path vendor
   - bundle exec s3_website push
@@ -32,6 +33,7 @@ deploy:
 pages:
   image: alpine
   stage: post-generate
+  environment: staging
   script:
   - mv build public
   except:
