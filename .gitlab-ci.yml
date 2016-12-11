@@ -15,7 +15,7 @@ generate:
   stage: generate
   script:
     - bundle install --path vendor
-    - cd lib && ruby config_gen.rb && cd ..
+    - cd lib && ruby config-gen.rb && cd ..
     - bundle exec middleman build
   artifacts:
     paths:
