@@ -6,7 +6,7 @@ description: In the early days, we accepted a few principles unconditionally bec
 
 <h1><%= current_page.data.title %></h1>
 
-Let's assume for now, that maybe we don't completely understand something. This little something makes us use Rails in the wrong way.
+Let's suppose for now that maybe we don't completely understand something. This little something makes us use Rails in the wrong way.
 
 In the early days, we accepted a few principles unconditionally because they sounded like axioms. Here are some of them:
 
@@ -18,7 +18,7 @@ In the early days, we accepted a few principles unconditionally because they sou
 - [YAGNI - "You aren't gonna need it"](../principles#yagni---you-arent-gonna-need-it)
 - [Composition over inheritance](../principles#prefer-composition-over-inheritance)
 
-People use principles and acronyms to compress meanings. By doing so, there's a risk they'll be misunderstood. I think this is exactly what's happened with some people in the Ruby community.
+People use principles and acronyms to compress meanings. By doing so, there's a risk that they'll be misunderstood. I think a significant part of the Ruby community had problems because of that.
 
 So let's try to decompress them, and see what might be wrong with our understanding.
 
@@ -29,10 +29,10 @@ This is a simple one, isn't it? Just don't duplicate code. Whenever you see dupl
 
 The problem here is that it tells us nothing about when is a good time to apply this principle. If no details are explained, we assume that it should be applied all the time.
 
-Everything has its price. The price of removing duplication is higher coupling.
+Everything has its price. The price of removing duplication is a higher coupling.
 
-At the early stages of application development you're usually not sure what your application is going to do and how your code should be organized. If you ignore it and remove duplications by creating new classes(or functions) to hold duplicated code, you create new abstractions, and your code start to depend on them.
-More dependencies means higher coupling, i.e. higher complexity of a system.
+At the early stages of application development, you're usually not sure what your application is going to do and how your code should be organized. If you ignore it and remove duplications by creating new classes(or functions) to hold duplicated code, you create new abstractions, and your code starts to depend on them.
+More dependencies mean higher coupling, i.e. higher complexity of a system.
 
 This is what Sandi Metz means when she says that duplication is much cheaper than the wrong abstraction.
 
@@ -40,12 +40,12 @@ This is what Sandi Metz means when she says that duplication is much cheaper tha
 
 By reducing the number of duplications, you're introducing abstractions. Your code becomes dependent on those abstractions.
 
-If they were wrong, you'll be stumbling upon them every single time you need to change your code.
+If they were wrong, you'd be stumbling upon them every single time you need to change your code.
 And they are wrong if you introduced them when your system understanding was not yet mature enough.
 
 This thing is also called *accidental complexity*, in contrast to *essential complexity*. It has nothing in common with the complexity of your business domain. It happens because you decide to organize everything in a specific way.
 
-For sure, you shouldn't be wanting that additional pile of complexity in your app. Let's just keep things simple, right?
+For sure, you shouldn't want that additional pile of complexity in your app. Let's just keep things simple, right?
 
 <%= img 'icon.png', 16 %>
 
@@ -53,10 +53,10 @@ For sure, you shouldn't be wanting that additional pile of complexity in your ap
 
 > The KISS principle states that most systems work best if they are kept simple rather than made complicated; therefore simplicity should be a key goal in design and unnecessary complexity should be avoided
 
-Sounds good, right? We use it to advocate for Rails, because Rails is so simple, right?
+Sounds good, right? We use KISS principle to advocate for Rails because Rails is so simple, right?
 
 It lets you forget about databases and tons of other technical details which have nothing in common with your application business logic. That's convenient! We can concentrate on just one thing, and all the other stuff we get for free.
-The Rails world is so cool, that we don't even had a whole class of problems, which millions of Java programmers struggle with every day!
+The Rails world is so cool that we don't even have a whole class of problems, which millions of Java programmers struggle with every day!
 
 Well,... is it true?
 
@@ -72,23 +72,23 @@ Here are some of the things, ActiveRecord gnomes had to do for you:
 - input data validation
 - interaction with the database
 - handling nested structures
-- callbacks(before_save, etc...)
+- callbacks(before_save, etc.)
 
 Looks like tons of work. Doesn't look that simple?
 It just has a convenient interface, but inside it is crazy as hell.
 
-Why should you care? Why not just let the Rails core team members suffer from that complexity, and just keep using it in order to keep things -simple- and convenient for us?
+Why should you care? Why not just let the Rails core team members suffer from that complexity, and just keep using it to keep things -simple- and convenient for us?
 
 Well, at some point, when you have a pretty big system, you'll find yourself wanting something no one thought of.
 Something like a polymorphic STI model which belongs to another polymorphic model through another model, which also has some valuable JSON data stored in Postgres using hstore.
 
-Of course, there's no reason to want something like this when you develop an application from scratch. But your app is mature and you already have all those associations and other stuff. And it doesn't contradict with Rails-way, quite the contrary.
+Of course, there's no reason to want something like this when you develop an application from scratch. But your app is mature, and you already have all those associations and other stuff. And it doesn't contradict with Rails-way, quite the contrary.
 So why not?
 
-If you ever try to do something like this, you quickly start to get all kinds of unpredictable errors and misbehavior.
-It is just because those gnomes under the hood go crazy of the complexity they need to handle. Or in other words, nobody from the core team supposed that it would be used in such an interesting way. And nobody cared to implement that specific case.
+If you ever try to do something like this, you quickly start to get all kinds of random errors and misbehavior.
+It is just because those gnomes under the hood go crazy of the complexity they need to handle. Or in other words, nobody from the core team supposed that it would be used in such an interesting way. And nobody cared to implement that particular case.
 
-At this point it becomes your personal problem, not the Rails core team problem. You have two options:
+At this point, it becomes your personal problem, not the Rails core team problem. You have two options:
 
 - jump into the ActiveRecord source, and try to be a hero, who covers that specific scenario and becomes a *RAILS CORE CONTRIBUTOR*!!!
 - reorganize your associations to make things a little bit simpler
@@ -107,13 +107,13 @@ One of its conveniences is that we have so few things to configure.
 ## Conventions over configurations
 
 What could be wrong with conventions?
-We should praise Rails for giving us naming convention about database stuff, that makes sense.
+We should praise Rails for giving us naming convention about database stuff that makes sense.
 
-Some developers take it too literally and go mad with it. They introduce their own extra conventions. And they are usually implemented with hardly readable metaprogramming code.
+Some developers take it too literally and go mad with it. They introduce extra conventions. And they are usually implemented with hardly readable metaprogramming code.
 
 The bad thing about conventions is that they are implicit. So if there's too many of them, it can be hard to remember why everything is done in a way it is done.
 
-Even default conventions might become too tight for you when your app grows. So just remember that the price of convention is flexibility.
+Even default conventions might become too tight for you when your app grows. So just remember that the price of a new convention is flexibility.
 
 <%= img 'icon.png', 16 %>
 
@@ -134,12 +134,12 @@ The problem with this is not that it is misunderstood. It is not understood at a
 
 It just doesn't make sense. Here's my Rails _application_. Here's `app` folder. What's wrong?
 
-This is where the idea of *DDD* starts floating around. We'll cover it next time, but for now let's not overcomplicate.
+The idea of *DDD* starts to float around at this point. We'll cover it next time, but for now let's not overcomplicate.
 
 Why is it always so painful to upgrade to the next version of Rails?
 Can you imagine your application without Rails? I mean your application has some business logic, right? Why can't you re-use it for some small command-line utility, for example?
 
-It is because such code is desperately dependent on Rails. Every single piece of usual Rails application code depends on the framework and assumes Rails is there to help.
+It is because such code is desperately dependent on Rails. Every single piece of typical Rails application code depends on the framework and assumes Rails is there to help.
 
 And if you have business logic code intermixed with the Rails framework, guess what happens when business logic changes or Rails needs to be upgraded?
 
@@ -147,7 +147,7 @@ And if you have business logic code intermixed with the Rails framework, guess w
 
 The PAIN starts to appear from every single change which should be done!
 
-Ideally you business logic code should have as few points of contact with the web framework as possible. It is a very good question how to achieve this.
+Ideally, your business logic code should have as few points of contact with the web framework as possible. It is an excellent question how to achieve this.
 
 <%= img 'principles/businesslogic-separated.jpg' %>
 
@@ -161,8 +161,8 @@ It looks pretty clear:
 
 > "...a programmer should not add functionality until deemed necessary" ([wikipedia](https://en.wikipedia.org/wiki/You_aren%27t_gonna_need_it))
 
-Wait, every Ruby developer in the world who is about to build a new web app, chooses Rails.
-Rails provides a lot of functionality you might not need yet.
+Wait, every Ruby developer in the world who is about to build a new web app chooses Rails.
+Rails provide a lot of functionality you might not need yet.
 
 What if you don't need a persistence layer yet? Wouldn't it be better if you could develop stuff, not thinking about how it is going to be stored in a DB And at some point implement a persistence layer, and switch from memory storage to MySQL or MongoDB or ElasticSearch or whatever?
 
@@ -176,7 +176,7 @@ Have you ever asked yourself this question? :)
 
 ## Prefer composition over inheritance
 
-In Ruby we have mixins. And once we learned that inheritance sucks, we tend to switch to modules, assuming it is better.
+In Ruby we have mixins. And once we learned that inheritance sucks, we tend to switch to modules. We assume it is better, but it is not.
 
 I'll just post this tweet here:
 
@@ -194,4 +194,3 @@ There is only one universal rule:
 > Question everything generally thought to be obvious.
 >
 > -- Dieter Rams -->
-
