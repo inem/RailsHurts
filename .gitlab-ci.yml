@@ -14,8 +14,8 @@ stages:
 generate:
   stage: generate
   script:
-  - bundle install --path vendor
-  - bundle exec middleman build
+    - bundle install --path vendor
+    - bundle exec middleman build
   artifacts:
     paths:
       - build
@@ -25,19 +25,19 @@ deploy:
   stage: post-generate
   environment: production
   script:
-  - bundle install --path vendor
-  - bundle exec s3_website push
+    - bundle install --path vendor
+    - bundle exec s3_website push
   only:
-  - master
+    - master
 
 pages:
   image: alpine
   stage: post-generate
   environment: staging
   script:
-  - mv build public
+    - mv build public
   except:
-  - master
+    - master
   artifacts:
     paths:
     - public
@@ -54,14 +54,15 @@ write-good:
 check-links:
   stage: post-generate
   script:
-  - bundle install --path vendor
-  - awesome_bot s3_website.yml build/*.html --allow-redirect --allow-dupe
+    - bundle install --path vendor
+    - awesome_bot s3_website.yml build/*.html --allow-redirect --allow-dupe
   allow_failure: true
 
 yaspeller:
   image: node
   stage: post-generate
   script:
-  - npm install yaspeller -g
-  - yaspeller source/*.md.erb
-  - yaspeller source/*.html.haml
+    - npm install yaspeller -g
+    - yaspeller source/*.md.erb
+    - yaspeller source/*.html.haml
+  allow_failure: true
