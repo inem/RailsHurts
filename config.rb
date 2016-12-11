@@ -37,6 +37,8 @@ config.url_root = "http://railshurts.com"
 # Automatic image dimensions on image_tag helper
 # activate :automatic_image_sizes
 
+set :relative_links, true
+
 # Reload the browser automatically whenever files change
 configure :development do
   activate :livereload
