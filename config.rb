@@ -3,6 +3,7 @@
 ###
 
 config.url_root = "http://railshurts.com"
+config.comments = true
 
 # Change Compass configuration
 # compass_config do |config|

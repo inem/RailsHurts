@@ -28,8 +28,8 @@
         %br/
       = yield
 
-
-      = partial "disqus"
+      - if settings.comments
+        = partial "disqus"
       = partial "likely"
 
       %br/
