@@ -28,7 +28,7 @@
         %br/
       = yield
 
-      - if settings.comments
+      - if current_page.data.comments
         = partial "disqus"
       = partial "likely"
 
