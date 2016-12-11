@@ -20,7 +20,6 @@ generate:
     paths:
       - build
       - vendor
-      - .bundle
 
 deploy:
   stage: post-generate
