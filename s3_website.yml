@@ -47,7 +47,7 @@ error_document: error.html
 
 redirects:
   _app:     http://blog.firsthand.ca/2011/10/rails-is-not-your-application.html
-  _kiss:    https://ru.wikipedia.org/wiki/KISS_(%D0%BF%D1%80%D0%B8%D0%BD%D1%86%D0%B8%D0%BF)
+  _kiss:    https://en.wikipedia.org/wiki/KISS_principle
   _dry:     http://blog.41studio.com/dont-repeat-yourself-dry-in-ruby-on-rails/
   _skinny:  http://weblog.jamisbuck.org/2006/10/18/skinny-controller-fat-model
   _yagni:   https://ru.wikipedia.org/wiki/YAGNI

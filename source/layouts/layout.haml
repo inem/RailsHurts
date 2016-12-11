@@ -8,7 +8,7 @@
     / Use title if it's in the page YAML frontmatter
     %title= current_page.data.title || "Rails hurts"
 
-    %link{ :rel=> "shortcut icon", :type => "image/png", :href => "/images/icon.png"}
+    %link{ :rel=> "shortcut icon", :type => "image/png", :href => "images/icon.png"}
     = stylesheet_link_tag "bootstrap.min", "likely"
     = javascript_include_tag "https://code.jquery.com/jquery-2.1.4.min.js"
     = javascript_include_tag  "all", "bootstrap.min", "likely"
