@@ -80,7 +80,7 @@ retext:
     - retext-mapbox-standard ./source/*.html.haml
   allow_failure: true
 
-# http://proselint.com/utility/
+# https://github.com/amperser/proselint
 proselint:
   image: python
   stage: post-generate
