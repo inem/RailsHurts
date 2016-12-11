@@ -4,12 +4,12 @@ cache:
   untracked: true
 
 stages:
-  - generate
-  - post-generate
-  - lint
+  - one
+  - two
+  - three
 
 generate:
-  stage: generate
+  stage: one
   script:
     - bundle install --path vendor
     - cd lib && ruby config-gen.rb && cd ..
@@ -20,7 +20,7 @@ generate:
       - vendor
 
 s3:
-  stage: post-generate
+  stage: three
   environment: production
   script:
     - bundle install --path vendor
@@ -30,7 +30,7 @@ s3:
 
 pages:
   image: alpine
-  stage: post-generate
+  stage: three
   environment: staging
   script:
     - rm -rf public && mv build public
@@ -43,7 +43,7 @@ pages:
 # https://github.com/werk85/node-html-to-text
 generate-text:
   image: node
-  stage: post-generate
+  stage: two
   script:
     - npm install html-to-text -g
     - mkdir -p text
@@ -60,7 +60,7 @@ generate-text:
 # https://github.com/btford/write-good
 write-good:
   image: node
-  stage: lint
+  stage: three
   script:
     - npm install -g write-good
     - write-good ./text/*.txt
@@ -68,7 +68,7 @@ write-good:
 
 # https://github.com/dkhamsing/awesome_bot
 awesome-bot:
-  stage: lint
+  stage: three
   script:
     - bundle install --path vendor
     - awesome_bot s3_website.yml build/*.html --allow-redirect --allow-dupe
@@ -77,7 +77,7 @@ awesome-bot:
 # https://github.com/hcodes/yaspeller
 yaspeller:
   image: node
-  stage: lint
+  stage: three
   script:
     - npm install yaspeller -g
     - yaspeller text/*.txt --ignore-urls --find-repeat-words
@@ -86,7 +86,7 @@ yaspeller:
 # https://github.com/mapbox/retext-mapbox-standard
 retext:
   image: node
-  stage: lint
+  stage: three
   script:
     - npm install -g retext-mapbox-standard
     - retext-mapbox-standard ./source/*.md.erb
@@ -95,7 +95,7 @@ retext:
 # https://github.com/amperser/proselint
 proselint:
   image: python
-  stage: lint
+  stage: three
   script:
     - pip install proselint
     - proselint ./text/*.txt
