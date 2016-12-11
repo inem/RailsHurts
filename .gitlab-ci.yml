@@ -78,3 +78,15 @@ retext:
     - retext-mapbox-standard ./source/*.md.erb
     - retext-mapbox-standard ./source/*.html.haml
   allow_failure: true
+
+# http://proselint.com/utility/
+proselint:
+  image: python
+  stage: post-generate
+  script:
+    - pip install proselint
+    - proselint ./source/*.md.erb
+    - proselint ./source/*.html.haml
+  allow_failure: true
+
+  proselint text.md
