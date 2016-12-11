@@ -58,7 +58,7 @@ Sounds good, right? We use it to advocate for Rails, because Rails is so simple,
 It lets you forget about databases and tons of other technical details which have nothing in common with your application business logic. That's convenient! We can concentrate on just one thing, and all the other stuff we get for free.
 The Rails world is so cool, that we don't even had a whole class of problems, which millions of Java programmers struggle with every day!
 
-But... is it true?
+Well,... is it true?
 
 Have you tried to take a look at the ActiveRecord source code?
 It is insane. It is like a horde of gnomes inside of a beautiful box with two buttons and a couple of settings, who do all kind of things to satisfy your request every time.
@@ -77,7 +77,7 @@ Here are some of the things, ActiveRecord gnomes had to do for you:
 Looks like tons of work. Doesn't look that simple?
 It just has a convenient interface, but inside it is crazy as hell.
 
-But why should you care? Why not just let the Rails core team members suffer from that complexity, and just keep using it in order to keep things -simple- and convenient for us?
+Why should you care? Why not just let the Rails core team members suffer from that complexity, and just keep using it in order to keep things -simple- and convenient for us?
 
 Well, at some point, when you have a pretty big system, you'll find yourself wanting something no one thought of.
 Something like a polymorphic STI model which belongs to another polymorphic model through another model, which also has some valuable JSON data stored in Postgres using hstore.
@@ -109,7 +109,7 @@ One of its conveniences is that we have so few things to configure.
 What could be wrong with conventions?
 We should praise Rails for giving us naming convention about database stuff, that makes sense.
 
-But some developers take it too literally and go mad with it. They introduce their own extra conventions. And they are usually implemented with hardly readable metaprogramming code.
+Some developers take it too literally and go mad with it. They introduce their own extra conventions. And they are usually implemented with hardly readable metaprogramming code.
 
 The bad thing about conventions is that they are implicit. So if there's too many of them, it can be hard to remember why everything is done in a way it is done.
 
@@ -121,7 +121,7 @@ Even default conventions might become too tight for you when your app grows. So 
 
 This is a lovely one. I do not remember the author. In the early days, when we all were suffering from fat controllers, it sounded like a great blessing for us all. Finally, we've figured it out! We shouldn't put all the business logic into controllers! Let's put all that crap into models, right?
 
-But why do you think life with fat models is going to be easier?
+Why do you think life with fat models is going to be easier?
 It turns out that just moving stuff from one place to another is not enough.
 
 <%= img 'principles/fat-classes.jpg' %>
@@ -161,7 +161,7 @@ It looks pretty clear:
 
 > "...a programmer should not add functionality until deemed necessary" ([wikipedia](https://en.wikipedia.org/wiki/You_aren%27t_gonna_need_it))
 
-But wait, every Ruby developer in the world who is about to build a new web app, chooses Rails.
+Wait, every Ruby developer in the world who is about to build a new web app, chooses Rails.
 Rails provides a lot of functionality you might not need yet.
 
 What if you don't need a persistence layer yet? Wouldn't it be better if you could develop stuff, not thinking about how it is going to be stored in a DB And at some point implement a persistence layer, and switch from memory storage to MySQL or MongoDB or ElasticSearch or whatever?
