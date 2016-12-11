@@ -88,5 +88,3 @@ proselint:
     - proselint ./source/*.md.erb
     - proselint ./source/*.html.haml
   allow_failure: true
-
-  proselint text.md
