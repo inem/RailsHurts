@@ -42,6 +42,7 @@ pages:
     paths:
     - public
 
+# https://github.com/btford/write-good
 write-good:
   image: node
   stage: post-generate
@@ -51,13 +52,15 @@ write-good:
     - write-good ./source/*.html.haml
   allow_failure: true
 
-check-links:
+# https://github.com/dkhamsing/awesome_bot
+awesome-bot:
   stage: post-generate
   script:
     - bundle install --path vendor
     - awesome_bot s3_website.yml build/*.html --allow-redirect --allow-dupe
   allow_failure: true
 
+# https://github.com/hcodes/yaspeller
 yaspeller:
   image: node
   stage: post-generate
