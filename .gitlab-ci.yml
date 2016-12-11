@@ -50,6 +50,7 @@ post-generate:
   stage: post-generate
   script:
     - npm install html-to-text -g
+    - mkdir -p text
     - cat build/index.html | html-to-text > text/index.txt
     - cat build/principles.html | html-to-text > text/principles.txt
     - cat build/mess.html | html-to-text > text/mess.txt
