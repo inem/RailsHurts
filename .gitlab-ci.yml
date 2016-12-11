@@ -35,7 +35,7 @@ pages:
   stage: post-generate
   environment: staging
   script:
-    - mv build public
+    - rm -rf public && mv build public
   except:
     - master
   artifacts:
