@@ -66,8 +66,7 @@ write-good:
   stage: lint
   script:
     - npm install -g write-good
-    - write-good ./source/*.md.erb
-    - write-good ./source/*.html.haml
+    - write-good ./text/*.txt
   allow_failure: true
 
 # https://github.com/dkhamsing/awesome_bot
@@ -93,8 +92,7 @@ retext:
   stage: lint
   script:
     - npm install -g retext-mapbox-standard
-    - retext-mapbox-standard ./source/*.md.erb
-    - retext-mapbox-standard ./source/*.html.haml
+    - retext-mapbox-standard ./text/*.txt
   allow_failure: true
 
 # https://github.com/amperser/proselint
@@ -103,8 +101,7 @@ proselint:
   stage: lint
   script:
     - pip install proselint
-    - proselint ./source/*.md.erb
-    - proselint ./source/*.html.haml
+    - proselint ./text/*.txt
   allow_failure: true
 
 
