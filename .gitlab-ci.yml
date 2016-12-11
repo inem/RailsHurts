@@ -89,7 +89,7 @@ retext:
   stage: lint
   script:
     - npm install -g retext-mapbox-standard
-    - retext-mapbox-standard ./text/*.txt
+    - retext-mapbox-standard ./source/*.md.erb
   allow_failure: true
 
 # https://github.com/amperser/proselint
