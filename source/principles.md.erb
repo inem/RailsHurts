@@ -29,13 +29,10 @@ This is a simple one, isn't it? Just don't duplicate code. Whenever you see dupl
 
 The problem here is that it tells us nothing about when is a good time to apply this principle. If no details are explained, we assume that it should be applied all the time.
 
-And, maybe you forgot, but everything has its price. And the price of removing duplication is higher coupling.
+Everything has its price. The price of removing duplication is higher coupling.
 
-Guess what happens when you apply DRY principle at the early stages of application development.
-You're still not sure about what your application is going to do, and how everything should be organized.
-But you already removed all possible duplications and made things coupled to each other.
-
-But here's the trick: higher coupling increases the complexity of a system.
+At the early stages of application development you're usually not sure what your application is going to do and how your code should be organized. If you ignore it and remove duplications by creating new classes(or functions) to hold duplicated code, you create new abstractions, and your code start to depend on them.
+More dependencies means higher coupling, i.e. higher complexity of a system.
 
 This is what Sandi Metz means when she says that duplication is much cheaper than the wrong abstraction.
 
@@ -43,7 +40,7 @@ This is what Sandi Metz means when she says that duplication is much cheaper tha
 
 By reducing the number of duplications, you're introducing abstractions. Your code becomes dependent on those abstractions.
 
-And if they were wrong, you'll be stumbling upon them every single time you need to change your code.
+If they were wrong, you'll be stumbling upon them every single time you need to change your code.
 And they are wrong if you introduced them when your system understanding was not yet mature enough.
 
 This thing is also called *accidental complexity*, in contrast to *essential complexity*. It has nothing in common with the complexity of your business domain. It happens because you decide to organize everything in a specific way.
