@@ -10,6 +10,7 @@ cache:
 stages:
   - generate
   - post-generate
+  - lint
 
 generate:
   stage: generate
@@ -22,7 +23,7 @@ generate:
       - build
       - vendor
 
-deploy:
+s3:
   stage: post-generate
   environment: production
   script:
@@ -43,10 +44,26 @@ pages:
     paths:
     - public
 
+# https://github.com/werk85/node-html-to-text
+post-generate:
+  image: node
+  stage: post-generate
+  script:
+    - npm install html-to-text -g
+    - cat build/index.html | html-to-text > text/index.txt
+    - cat build/principles.html | html-to-text > text/principles.txt
+    - cat build/mess.html | html-to-text > text/mess.txt
+    - cat build/team.html | html-to-text > text/team.txt
+    - cat build/about.html | html-to-text > text/about.txt
+    - cat build/current_state.html | html-to-text > text/current_state.txt
+  artifacts:
+    paths:
+    - public
+
 # https://github.com/btford/write-good
 write-good:
   image: node
-  stage: post-generate
+  stage: lint
   script:
     - npm install -g write-good
     - write-good ./source/*.md.erb
@@ -55,7 +72,7 @@ write-good:
 
 # https://github.com/dkhamsing/awesome_bot
 awesome-bot:
-  stage: post-generate
+  stage: lint
   script:
     - bundle install --path vendor
     - awesome_bot s3_website.yml build/*.html --allow-redirect --allow-dupe
@@ -64,16 +81,16 @@ awesome-bot:
 # https://github.com/hcodes/yaspeller
 yaspeller:
   image: node
-  stage: post-generate
+  stage: lint
   script:
     - npm install yaspeller -g
-    - yaspeller build/*.html --ignore-urls --ignore-tags --find-repeat-words
+    - yaspeller text/*.txt --ignore-urls --find-repeat-words
   allow_failure: true
 
 # https://github.com/mapbox/retext-mapbox-standard
 retext:
   image: node
-  stage: post-generate
+  stage: lint
   script:
     - npm install -g retext-mapbox-standard
     - retext-mapbox-standard ./source/*.md.erb
@@ -83,9 +100,11 @@ retext:
 # https://github.com/amperser/proselint
 proselint:
   image: python
-  stage: post-generate
+  stage: lint
   script:
     - pip install proselint
     - proselint ./source/*.md.erb
     - proselint ./source/*.html.haml
   allow_failure: true
+
+
