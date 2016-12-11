@@ -57,3 +57,11 @@ check-links:
   - bundle install --path vendor
   - awesome_bot s3_website.yml build/*.html --allow-redirect --allow-dupe
   allow_failure: true
+
+yaspeller:
+  image: node
+  stage: post-generate
+  script:
+  - npm install yaspeller -g
+  - yaspeller source/*.md.erb
+  - yaspeller source/*.html.haml
