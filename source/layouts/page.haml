@@ -8,7 +8,7 @@
     / Use title if it's in the page YAML frontmatter
     %title= current_page.data.title || "Rails hurts"
 
-    %link{ :rel=> "shortcut icon", :type => "image/png", :href => "/images/icon.png"}
+    %link{ :rel=> "shortcut icon", :type => "image/png", :href => "images/icon.png"}
     = stylesheet_link_tag "bootstrap.min", "likely"
     = javascript_include_tag "https://code.jquery.com/jquery-2.1.4.min.js"
     = javascript_include_tag  "all", "bootstrap.min", "likely"
@@ -21,7 +21,7 @@
         %br/
         %br/
         %a{:href => "/"}
-          %img.center-block{:src => "/images/site-logo.png", :width => "60px"}/
+          %img.center-block{:src => "images/site-logo.png", :width => "60px"}/
           %h5{:style => "text-align: center;"}
             RAILS HURTS
 
@@ -37,7 +37,7 @@
         = partial "new_posts"
         %br/
         %a{:href => "http://twitter.com/RailsHurts"}
-          %img.center-block{:src => "/images/ruby-patched.png", :width => "60px"}/
+          %img.center-block{:src => "images/ruby-patched.png", :width => "60px"}/
           Follow @RailsHurts
       %br/
       %br/
