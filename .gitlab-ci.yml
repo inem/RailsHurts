@@ -59,7 +59,7 @@ generate-text:
     - cat build/current_state/index.html | html-to-text > text/current_state.txt
   artifacts:
     paths:
-    - public
+    - text
 
 # https://github.com/btford/write-good
 write-good:
