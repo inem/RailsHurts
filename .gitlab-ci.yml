@@ -68,3 +68,13 @@ yaspeller:
     - npm install yaspeller -g
     - yaspeller build/*.html --ignore-urls --ignore-tags --find-repeat-words
   allow_failure: true
+
+# https://www.npmjs.com/package/retext-mapbox-standard
+retext:
+  image: node
+  stage: post-generate
+  script:
+    - npm install -g retext-mapbox-standard
+    - retext-mapbox-standard ./source/*.md.erb
+    - retext-mapbox-standard ./source/*.html.haml
+  allow_failure: true
