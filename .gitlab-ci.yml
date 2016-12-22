@@ -20,7 +20,7 @@ generate:
       - vendor
 
 s3:
-  stage: three
+  stage: two
   environment: production
   script:
     - bundle install --path vendor
@@ -30,7 +30,7 @@ s3:
 
 pages:
   image: alpine
-  stage: three
+  stage: two
   environment: staging
   script:
     - rm -rf public && mv build public
