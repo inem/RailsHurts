@@ -3,12 +3,23 @@ name: Ruby or Rails?
 main: Let's check whether you remember where Ruby ends and Rails starts
 results: |
     <br/>
-    <!-- <h4>• Check out <a href="/current_state/">current state of Ruby on Rails community</a></h4>
+    <h4>• Check out <a href="/current_state/">current state of Ruby on Rails community</a></h4>
     <h4>• See how we <a href='/principles/'>misunderstand software developement principles</a>, but keep applying them</a></h4>
-    <h4>• Learn <a href="/mess/">why your code turns into a mess</a> every time</h4> -->
-    <h4>• Need help with messy code or a tricky problem? Hire <a href="/team/">our team</a>!</h4>
+    <h4>• Learn <a href="/mess/">why your code turns into a mess</a> every time</h4>
+
     <br/>
-    <br/>
+
+    <div class="well">
+    <div class="text-center">
+      <h4>
+        <a href="./team">Need help with legacy app refactoring? Our team can help!</a>
+        <br>
+        <small>
+          Hire developers who understand how to organize code in Rails app for long-term maintainability
+        </small>
+      </h4>
+    </div>
+    </div>
 
     <!--<h5>Share the quiz!</h5>
     <div class="a2a_kit a2a_kit_size_32 a2a_default_style">
